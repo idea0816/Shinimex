@@ -1,0 +1,221 @@
+@charset "utf-8";
+/* CSS Document */
+#wrapper {
+	width: 900px; /*寬度設定為900px*/
+	margin: auto; /*版面居中對齊*/
+	border: 2px solid #DEECDF;
+}
+
+#header {
+	height: 100px;
+	background-image: url(../images/SHV1_RB_Headsmall.png);
+	background-repeat: no-repeat;
+	background-position: 500px;
+	/*text-align: right;*/
+	border: solid 1px gray;
+	padding-top: 20px;
+	padding-bottom: 30px;
+	padding-left: 30px;
+}
+
+#button {
+	/*高度設定*/
+	/*文字設定*/
+	font-weight: bolder;
+	color: #FFF;
+	font-size: 14px;
+	/*背景色設定*/
+	background-color: #6E6E6E;
+	/*將內定的邊距清除*/
+	margin: 0px;
+	/*將內定的內距清除*/
+	padding: 0px;
+}
+
+#button li {
+	/* 設定清單文字範圍的寬度 */
+	width: 178px;
+	/* 讓清單文字居中對齊 */
+	text-align: center;
+	/* 去除清單文字前面的小圓點*/
+	list-style-type: none;
+	/* 設定背景色 */
+	background-color: #6E6E6E;
+	/* 讓各個清單元素靠左對齊 */
+	float: left;
+	/* 設定字距為2px */
+	letter-spacing: 2px;
+	/* 設定左邊的白邊樣式 */
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #FFF;
+	/* 右邊留白1像素 */
+	margin-right: 1px;
+}
+
+#button li a {
+	display: block;
+	line-height: 22px;
+	/*height:20px;*/
+	color: #FFF;
+	text-decoration: none;
+}
+
+#button li a:hover {
+	background-color: #39919F
+}
+
+#content {
+	font-family: "微軟正黑體", "Arial Unicode MS";
+	font-size: 14px;
+	line-height: 2em;
+	color: #333;
+	padding: 30px;
+	background-color: #DDE3E3;
+	/* CSS 中 DIV 自己會長到上層 DIV100% 的寬度 (在這裡就是 #wrapper)，所以可不用設定寬度*/
+}
+
+body {
+	background-color: #00C78C;
+	/******跨瀏覽器的底色漸層CSS語法  00475E 007276********/
+	background: -webkit-gradient(linear, 2% 0%, 0% 100%, from(#00C78C),
+		to(#FFFFFF));
+	background: -moz-linear-gradient(#00C78C, #FFFFFF);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,
+		startColorstr='#00C78C', endColorstr='#FFFFFF');
+	margin: 0px;
+}
+
+#footer {
+	font-size: 12px;
+	line-height: 1.5em;
+	color: #DDE3E3;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	/*padding-left: 0px;*/
+	text-align: center;
+}
+
+#footer li {
+	/* 設定清單文字範圍的寬度 */
+	width: 200px;
+	/* 讓清單文字居中對齊 */
+	text-align: center;
+	/* 去除清單文字前面的小圓點*/
+	list-style-type: none;
+	/* 設定背景色 
+    background-color:#FFFFFF;*/
+	/* 讓各個清單元素靠左對齊 */
+	float: left;
+	/* 設定字距為2px */
+	letter-spacing: 2px;
+	/* 設定右邊的白邊樣式 */
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #333;
+	/* 右邊留白1像素 */
+	margin-right: 1px;
+}
+
+#footer li a {
+	display: block;
+	line-height: 22px;
+	height: 20px;
+	color:;
+	text-decoration: none;
+}
+
+#footer li a:hover {
+	background-color: #39919F
+}
+
+h1 {
+	color: #FFF;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 30px;
+	margin: 0px;
+}
+
+.header-text {
+	font-size: 15px;
+	color: #D2EFF7;
+	font-family: "Times New Roman", Times, serif;
+	font-weight: bolder;
+	font-style: italic;
+	margin: 0px;
+}
+
+.title-1 {
+	font-size: 18px;
+	line-height: 2em;
+	border-bottom-width: 1px;
+	border-left-width: 12px;
+	border-bottom-style: dotted;
+	border-left-style: dotted;
+	border-bottom-color: #417C9A;
+	border-left-color: #417C9A;
+	color: #187E95;
+}
+
+.text-s {
+	font-size: 13px;
+	color: #6F6CA1;
+	border-left-width: 2px;
+	border-left-style: dotted;
+	border-left-color: #8081B1;
+	padding-left: 5px;
+	font-weight: bolder;
+}
+
+#content table {
+	border-bottom-width: 5px;
+	border-bottom-style: solid;
+	border-bottom-color: #278092;
+}
+
+#content table tr td {
+	padding: 5px;
+	font-size: 12px;
+	line-height: 1.5em;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #278092;
+}
+
+#content a {
+	color: #278092;
+	text-decoration: none;
+}
+
+#content a:hover {
+	color: #903;
+	text-decoration: underline;
+}
+
+.table_title {
+	font-size: 14px;
+	font-weight: bolder;
+	color: #E9F0E0;
+	background-color: #278092;
+}
+
+#content ul li {
+	list-style-image: url(../images/arrow_c.jpg);
+}
+
+.floatleft {
+	float: left;
+	padding-right: 20px;
+	padding-bottom: 20px;
+}
+
+.floatright {
+	float: right;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+}
+
+.clearboth {
+	clear: both;
+}

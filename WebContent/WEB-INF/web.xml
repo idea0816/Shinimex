@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>Shinimex</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+	<context-param>
+		<param-name>dataBase</param-name>
+		<param-value>192.168.3.3</param-value>
+		 
+		<!-- <param-value>192.168.56.1</param-value> -->
+		<!-- <param-value>192.168.2.226</param-value> --><!-- 二廠測試IP -->
+	</context-param>
+
+	<context-param>
+		<param-name>databaseName</param-name>
+		<param-value>LIY_DDS</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>user</param-name>
+		<param-value>sa</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>pw</param-name>
+		<param-value>shinimex25620299</param-value>
+	</context-param>
+	
+	
+	
+	
+	<servlet>
+		<servlet-name>testConn</servlet-name>
+		<servlet-class>shinimex.model.TestConn</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>testConn</servlet-name>
+		<url-pattern>/testConn.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>pc_Progressxiexing</servlet-name>
+		<servlet-class>shinimex.model.pc_Progressxiexing</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>pc_Progressxiexing</servlet-name>
+		<url-pattern>/pc_Progressxiexing.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>pc_ProgressKHDH</servlet-name>
+		<servlet-class>shinimex.model.pc_ProgressKHDH</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>pc_ProgressKHDH</servlet-name>
+		<url-pattern>/pc_ProgressKHDH.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>pc_ProgressgetOrders</servlet-name>
+		<servlet-class>shinimex.model.pc_ProgressgetOrders</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>pc_ProgressgetOrders</servlet-name>
+		<url-pattern>/pc_ProgressgetOrders.do</url-pattern>
+	</servlet-mapping>
+</web-app>

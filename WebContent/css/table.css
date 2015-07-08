@@ -1,0 +1,58 @@
+#header {
+	height: 40px;
+	margin-left: -10px;
+	margin-right: -10px;
+	background-image: url(../images/SHV2_RBsmall.png);
+	background-repeat: no-repeat;
+	background-position: -5% 45%;
+	background-color: #00C78C;
+	border-style: none;
+}
+
+#wrapper {
+	width: 90%;
+	margin: auto; /*版面居中對齊*/
+	border: 2px solid #DEECDF; /* 淺綠 */
+}
+
+#content table {
+	width: 100%;
+	border: 0;
+	border-bottom-width: 5px;
+	border-bottom-style: solid;
+	border-bottom-color: #278092;
+}
+
+.table_title {
+	font-size: 14px;
+	font-weight: bolder;
+	color: #E9F0E0;
+	background-color: #278092;
+}
+
+#content tr td {
+	/*width: 100px;*/
+	/*word-break: break-all;*/
+	
+}
+
+#content input{
+	width: 150px;
+	height: 20px;
+	font-size: 12px;
+	margin-top: 5px;
+	margin-right: 10px;
+	margin-bottom: 5px;
+	margin-left: 10px;
+}
+
+#footer {
+	font-size: 10px;
+	text-align: center;
+	color: #DEECDF;
+	margin-left: -10px;
+	margin-right: -10px;
+	padding-top: 0.1px;
+	padding-bottom: 0.1px;
+	background-color: #00C78C;
+}
