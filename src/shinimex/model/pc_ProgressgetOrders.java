@@ -2,7 +2,7 @@ package shinimex.model;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.HashMap;
+//import java.util.HashMap;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.gson.Gson;
+//import com.google.gson.Gson;
 
 /*
  * @author Eric Chen.,CPY
@@ -24,8 +24,8 @@ public class pc_ProgressgetOrders extends HttpServlet {
 			throws ServletException, IOException {
 
 		Conn conn = new Conn();
-		Gson gson = new Gson();
-		HashMap<String, String> KHDHlist = new HashMap<String, String>();
+		//Gson gson = new Gson();
+		//HashMap<String, String> KHDHlist = new HashMap<String, String>();
 
 		ServletContext servletContext = getServletConfig().getServletContext();
 

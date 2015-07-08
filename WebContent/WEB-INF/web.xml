@@ -15,10 +15,10 @@
 
 	<context-param>
 		<param-name>dataBase</param-name>
-		<param-value>192.168.3.3</param-value>
+		<!-- <param-value>192.168.3.3</param-value> --> 
 		 
-		<!-- <param-value>192.168.56.1</param-value> -->
-		<!-- <param-value>192.168.2.226</param-value> --><!-- 二廠測試IP -->
+		<param-value>192.168.3.126</param-value><!-- 二廠測試IP -->
+		<!-- <param-value>192.168.56.1</param-value> --><!-- MAC測試IP -->
 	</context-param>
 
 	<context-param>
@@ -33,7 +33,7 @@
 
 	<context-param>
 		<param-name>pw</param-name>
-		<param-value>shinimex25620299</param-value>
+		<param-value></param-value>
 	</context-param>
 	
 	

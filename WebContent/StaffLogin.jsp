@@ -25,7 +25,7 @@
 		<div id="content">
 			<h1>Log in</h1>
 			<p>
-				<label>user name</label>
+				<label>User Name</label>
 				<input required="required" type="text" placeholder="User Name" autofocus/>
 			</p>
 			<p>
