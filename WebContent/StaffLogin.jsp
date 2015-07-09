@@ -23,14 +23,15 @@
 
 	<div id="wrapper">
 		<div id="content">
+			<form action="staffLogin.do" method="post">
 			<h1>Log in</h1>
 			<p>
 				<label>User Name</label>
-				<input required="required" type="text" placeholder="User Name" autofocus/>
+				<input required="required" name="username" type="text" placeholder="User Name" autofocus/>
 			</p>
 			<p>
 				<label>Password</label>
-				<input required="required" type="password" placeholder="Password" />
+				<input required="required" name="password" type="password" placeholder="Password" />
 			</p>
 			<p>
 				<input type="submit" value="Login" />
@@ -39,6 +40,8 @@
 				Not a staff yet ?
 				<a href="">Join Us</a>
 			</p>
+			
+			</form>
 
 			
 		</div>

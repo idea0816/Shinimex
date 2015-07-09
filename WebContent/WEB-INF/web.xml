@@ -74,4 +74,13 @@
 		<servlet-name>pc_ProgressgetOrders</servlet-name>
 		<url-pattern>/pc_ProgressgetOrders.do</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>staffLogin</servlet-name>
+		<servlet-class>shinimex.model.StaffLogin</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>staffLogin</servlet-name>
+		<url-pattern>/staffLogin.do</url-pattern>
+	</servlet-mapping>
 </web-app>
