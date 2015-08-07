@@ -26,6 +26,7 @@ nav > ul > li > a {
 
 nav li > ul li{
 	display: block;
+	opacity: 0;
 }
 
 nav li > ul li a {
