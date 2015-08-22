@@ -8,8 +8,8 @@ $(document).ready(function() {
 		$("#content").load("f_list_for_Customs.jsp");
 	});
 
-	$("#rf").click(function() {
-		$("#content").load("rf.html");
+	$("#orderStatus").click(function() {
+		$("#content").load("orderStatus.do");
 	});
 
 	$("#vp").click(function() {
