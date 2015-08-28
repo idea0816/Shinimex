@@ -94,4 +94,14 @@
 		<servlet-name>orderStatus</servlet-name>
 		<url-pattern>/orderStatus.do</url-pattern>
 	</servlet-mapping>
+	
+	<!-- 2015-08-27 Delete Data -->
+	<servlet>
+		<servlet-name>deleteData</servlet-name>
+		<servlet-class>shinimex.model.DeleteData</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>deleteData</servlet-name>
+		<url-pattern>/deleteData.do</url-pattern>
+	</servlet-mapping>
 </web-app>
