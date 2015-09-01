@@ -8,6 +8,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -92,9 +93,9 @@ public class OrderStatus extends HttpServlet {
 		
 		//判斷昃否要修改日期
 		if(ddrqCheck.isEmpty() && ddjqCheck.isEmpty() && chrqCheck.isEmpty()){
-//			System.out.println("訂單產能狀態表");
+			RequestDispatcher rd = req.getRequestDispatcher("orderStatus.jsp");
+			rd.forward(req, resp);
 		}else{
-//			System.out.println("修改錯誤日期");
 			session.setAttribute("ddrqCheck", ddrqCheck);
 			session.setAttribute("ddjqCheck", ddjqCheck);
 			session.setAttribute("chrqCheck", chrqCheck);

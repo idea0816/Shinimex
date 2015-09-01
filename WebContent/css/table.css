@@ -30,12 +30,13 @@
 	background-color: #278092;
 }
 
+/*
 #content tr td {
-	/*width: 100px;*/
-	/*word-break: break-all;*/
+	width: 100px;
+	word-break: break-all;
 	
 }
-
+*/
 #content input{
 	width: 150px;
 	height: 20px;
@@ -44,6 +45,14 @@
 	margin-right: 10px;
 	margin-bottom: 5px;
 	margin-left: 10px;
+}
+
+
+#content input[type="checkbox"]{
+	width : 120px;
+	height: 20px;
+	fornt-size: 12px;
+	text-align: center;
 }
 
 #footer {

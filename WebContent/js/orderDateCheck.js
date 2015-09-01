@@ -4,7 +4,7 @@ $(document).ready(function() {
 	$("#checkAll").click(function() {
 		$('input:checkbox').prop('checked', this.checked);
 	});
-	
+
 	// 設定確認視窗中的按鈕文字
 	alertify.set({
 		labels : {
@@ -19,21 +19,17 @@ $(document).ready(function() {
 		$('input:checkbox:checked[name="checkBox"]').each(function(i) {
 			checkBox[i] = this.value;
 		});
-		
+
 		// Confirm視窗
 		alertify.confirm("Sure to DELETE Selected items ?", function(e) {
 			if (e) {
-				// OK! 送出刪除資料
+				// OK! 送出Delete資料
 				$.ajax({
 					type : "POST",
 					url : "deleteData.do",
 					data : "orderStatusDel=" + checkBox
-				// type: "POST",
-				//dataType : "html",
-				// url: "deleteData.do?orderStatusDel="
-				// + encodeURI(encodeURI(checkBox))
 				}).done(function(msg) {
-					// alert( "Data Saved: " + msg );
+					$("#content").load("orderStatus.do");
 				});
 			} else {
 				// cancel!!
@@ -45,19 +41,33 @@ $(document).ready(function() {
 
 	// update button
 	$("#update").click(function() {
-		
 		var updateDate = [];
+		var x = 0;// 改寫 date 的序列號、避免有空值傳出
 		$('input[name="updateDate"]').each(function(i) {
-			if(this.value.length = 10){
-				updateDate[i] = this.value;
-			}			
+			if (this.value != '') {
+				//this.id -> 加入資料名稱及key,傳到SQL才有條件可以找. +":"+ 是為了分別出條件和日期
+				updateDate[x] = this.id+":"+this.value;
+				x += 1;
+			} else {
+			}
 		});
-		
-		 var aaa = '';
-		 $.each(updateDate, function(index, value) {
-			 aaa += index + ' : ' + value + '\n'
-		 });
-		 alert(aaa)
+
+		// Confirm視窗
+		alertify.confirm("Sure to UPDATE items ?", function(e) {
+			if (e) {
+				// OK! 送出Update資料
+				$.ajax({
+					type : "POST",
+					url : "deleteData.do",
+					data : "orderStatusUpdate=" + updateDate
+				}).done(function(msg) {
+					$("#content").load("orderStatus.do");
+				});
+			} else {
+				// cancel!!
+				alert("Cancel")
+			}
+		});
 
 	});
 

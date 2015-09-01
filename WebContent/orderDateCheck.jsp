@@ -36,7 +36,7 @@
 					type="checkbox"></td>
 				<td>${ddrqCheck.key}</td>
 				<td>${ddrqCheck.value }</td>
-				<td><input name="updateDate" id="date${ddrqCheck.key}" type="date" /></td>
+				<td><input name="updateDate" id="ddrq${ddrqCheck.key}" type="date" /></td>
 			</tr>
 		</c:forEach>
 	</table>
@@ -57,7 +57,7 @@
 					type="checkbox"></td>
 				<td>${ddjqCheck.key}</td>
 				<td>${ddjqCheck.value }</td>
-				<td><input type="date" /></td>
+				<td><input name="updateDate" id="ddjq${ddjqCheck.key}" type="date" /></td>
 			</tr>
 		</c:forEach>
 	</table>
@@ -78,7 +78,7 @@
 					type="checkbox"></td>
 				<td>${chrqCheck.key}</td>
 				<td>${chrqCheck.value }</td>
-				<td><input type="date" /></td>
+				<td><input name="updateDate" id="chrq${chrqCheck.key}" type="date" /></td>
 			</tr>
 		</c:forEach>
 	</table>
