@@ -12,8 +12,8 @@ $(document).ready(function() {
 		$("#content").load("orderStatus.do");
 	});
 
-	$("#vp").click(function() {
-		$("#content").load("vp.html");
+	$("#editFormula").click(function() {
+		$("#content").load("editFormula.jsp");
 	});
 
 	$("#cu").click(function() {

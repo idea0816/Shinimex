@@ -1,0 +1,43 @@
+ul.tabs {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.tabs li {
+	border: #278092 solid 1px;
+	border-bottom: none;
+	float: left;
+	margin: 0 0 0 0;
+	padding: .25em .5em;
+}
+
+ul.tabs li a {
+	/*color: gray;*/
+	color: #278092; 
+	font-weight: bold;
+	text-decoration: none;
+}
+
+ul.tabs li a:hover {
+	/*color: #888;*/
+	color: #B2C67F;
+	cursor: pointer;
+}
+
+ul.tabs li.active {
+	background: #278092;
+}
+
+ul.tabs li.active a {
+	color: white;
+}
+
+.clr {
+	clear: both;
+}
+
+article {
+	border-top: gray solid 1px;
+	padding: 0 1em;
+}
