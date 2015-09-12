@@ -54,7 +54,8 @@ public class OrderStatus extends HttpServlet {
 
 		/**
 		 * 2013-01-04 訂單數量加入條件如下: DDZL.DDLB = 'N' 訂單類別為正式訂單 DDZL.DDZT = 'Y'
-		 * 訂單狀態為正常 XXZL.lbdh = 'O' 加入判斷模具類別 2015-08-18 加入年份自動取得(所以跨年後要怎麼取得資料???)
+		 * 訂單狀態為正常 XXZL.lbdh = 'O' 加入判斷模具類別 
+		 * 2015-08-18 加入年份自動取得(所以跨年後要怎麼取得資料???)
 		 * 2015-08-19 加入日期格式檢查 2015-09-03 加入日期不合理檢查(大於現在2個月)
 		 **/
 
@@ -123,7 +124,7 @@ public class OrderStatus extends HttpServlet {
 					i_outsoles += 1;
 				}
 			} catch (Exception e) {
-				// TODO: handle exception
+				e.printStackTrace();
 			}
 			// 補足12個月
 			while (i_outsoles != 12) {
@@ -147,7 +148,7 @@ public class OrderStatus extends HttpServlet {
 					i_pieces += 1;
 				}
 			} catch (Exception e) {
-				// TODO: handle exception
+				e.printStackTrace();
 			}
 			// 補足12個月
 			while (i_pieces != 12) {
@@ -171,7 +172,7 @@ public class OrderStatus extends HttpServlet {
 					i_delivery += 1;
 				}
 			} catch (Exception e) {
-				// TODO: handle exception
+				e.printStackTrace();
 			}
 			// 補足12個月
 			while (i_delivery != 12) {
@@ -195,7 +196,7 @@ public class OrderStatus extends HttpServlet {
 					i_capacity += 1;
 				}
 			} catch (Exception e) {
-				// TODO: handle exception
+				e.printStackTrace();
 			}
 			// 補足12個月
 			while (i_capacity != 12) {

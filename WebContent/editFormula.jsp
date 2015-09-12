@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<!-- <%@page contentType="text/html; charset=UTF-8" %> 避免JSP出現亂碼 -->
+<%@page contentType="text/html; charset=UTF-8"%><!--  避免JSP出現亂碼 -->
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -16,11 +17,15 @@
 </head>
 <body>
 
+	<!--  
+	session.setAttribute("clzlList", clzlList);
+	-->
+
 	This is editFormula!!!
 	<br />
 
 	<ul class="tabs">
-		<li><a href="#tab1">Formula Page</a></li>
+		<li><a href="#tab1">Formula</a></li>
 		<li><a href="#tab2">List</a></li>
 		<li><a href="#tab3">Other</a></li>
 	</ul>
@@ -35,18 +40,66 @@
 					<th>中文品名</th>
 					<th>Description</th>
 					<th>Price</th>
-					<th></th>
 				</tr>
+
+				<c:forEach items="${sessionScope.clzlList}" var="clzlList"
+					varStatus="status">
+					<tr onMouseOut="this.style.backgroundColor=''"
+						onMouseOver="this.style.backgroundColor='#B2C67F';">
+						<td>${clzlList.cldh}</td>
+						<td>${clzlList.zwpm }</td>
+						<td>${clzlList.ywpm }</td>
+						<td>${clzlList.cldj }</td>
+					</tr>
+				</c:forEach>
+
 			</table>
 		</article>
 		<article id="tab2">
-			<p>Sed egestas, ante et vulputate volutpat, eros pede semper est,
-				vitae luctus metus libero eu augue. Morbi purus libero, faucibus
-				adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent
-				elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum
-				volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu
-				pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu,
-				fermentum et, dapibus sed, urna.</p>
+			配方代號<input type="text"/>USD單價/KG<input type="text"/>一手重量<input type="text"/>
+			<br/>
+			<table>
+				<tr class="table_title">
+					<th>類別</th>
+					<th>材料代號</th>
+					<th>中文品名</th>
+					<th>配方量%</th>
+					<!-- <th>配方用量KG</th>
+					<th>USD單價</th>
+					<th>金額</th>-->
+				</tr>
+
+				<c:forEach items="${sessionScope.clzlList}" var="clzlList"
+					varStatus="status">
+					<tr onMouseOut="this.style.backgroundColor=''"
+						onMouseOver="this.style.backgroundColor='#B2C67F';">
+						<td>${clzlList.cldh}</td>
+						<td>${clzlList.zwpm }</td>
+						<td>${clzlList.ywpm }</td>
+						<td>${clzlList.cldj }</td>
+					</tr>
+				</c:forEach>
+			</table>
+			
+			<table>
+				<tr class="table_title">
+					<th>類別</th>
+					<th>材料代號</th>
+					<th>中文品名</th>
+					<th>配方量%</th>
+				</tr>
+
+				<c:forEach items="${sessionScope.clzlList}" var="clzlList"
+					varStatus="status">
+					<tr onMouseOut="this.style.backgroundColor=''"
+						onMouseOver="this.style.backgroundColor='#B2C67F';">
+						<td>${clzlList.cldh}</td>
+						<td>${clzlList.zwpm }</td>
+						<td>${clzlList.ywpm }</td>
+						<td>${clzlList.cldj }</td>
+					</tr>
+				</c:forEach>
+			</table>
 		</article>
 		<article id="tab3">
 			<p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia,

@@ -13,7 +13,7 @@ $(document).ready(function() {
 	});
 
 	$("#editFormula").click(function() {
-		$("#content").load("editFormula.jsp");
+		$("#content").load("editFormula.do");
 	});
 
 	$("#cu").click(function() {

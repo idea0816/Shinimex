@@ -17,5 +17,5 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jstl.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/standard.jar"/>
 	<classpathentry kind="lib" path="src/gson-2.3.1.jar"/>
-	<classpathentry kind="output" path="build/classes"/>
+	<classpathentry kind="output" path="WebContent/WEB-INF/classes"/>
 </classpath>

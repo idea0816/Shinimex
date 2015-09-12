@@ -41,7 +41,7 @@ public class DeleteData extends HttpServlet {
 								+ data.substring(4) + "'";
 						conn.Conn_Update();
 					} catch (Exception e) {
-						// TODO: handle exception
+						e.printStackTrace();
 					}
 					break;
 				case "ddjq":
@@ -51,7 +51,7 @@ public class DeleteData extends HttpServlet {
 								+ data.substring(4) + "'";
 						conn.Conn_Update();
 					} catch (Exception e) {
-						// TODO: handle exception
+						e.printStackTrace();
 					}
 					break;
 				case "chrq":
@@ -62,7 +62,7 @@ public class DeleteData extends HttpServlet {
 								+ data.substring(4) + "'";
 						conn.Conn_Update();
 					} catch (Exception e) {
-						// TODO: handle exception
+						e.printStackTrace();
 					}
 					// DELETE DDSC
 					try {
@@ -70,7 +70,7 @@ public class DeleteData extends HttpServlet {
 								+ data.substring(4) + "'";
 						conn.Conn_Update();
 					} catch (Exception e) {
-						// TODO: handle exception
+						e.printStackTrace();
 					}
 					// DELETE DDSCS
 					try {
@@ -78,7 +78,7 @@ public class DeleteData extends HttpServlet {
 								+ data.substring(4) + "'";
 						conn.Conn_Update();
 					} catch (Exception e) {
-						// TODO: handle exception
+						e.printStackTrace();
 					}
 					break;
 				}
@@ -104,7 +104,7 @@ public class DeleteData extends HttpServlet {
 								+ "' WHERE DDBH = '" + updateDDBH + "'";
 						conn.Conn_Update();
 					} catch (Exception e) {
-						// TODO: handle exception
+						e.printStackTrace();
 					}
 					break;
 				case "ddjq":
@@ -119,7 +119,7 @@ public class DeleteData extends HttpServlet {
 								+ "' WHERE DDBH = '" + updateDDBH2 + "'";
 						conn.Conn_Update();
 					} catch (Exception e) {
-						// TODO: handle exception
+						e.printStackTrace();
 					}
 					break;
 				case "chrq":
@@ -135,7 +135,7 @@ public class DeleteData extends HttpServlet {
 								+ "' WHERE CHBH = '" + CHBH + "'";
 						conn.Conn_Update();
 					} catch (Exception e) {
-						// TODO: handle exception
+						e.printStackTrace();
 					}
 					// Update DDSC
 					try {
@@ -143,7 +143,7 @@ public class DeleteData extends HttpServlet {
 								+ "' WHERE CHBH = '" + CHBH + "'";
 						conn.Conn_Update();
 					} catch (Exception e) {
-						// TODO: handle exception
+						e.printStackTrace();
 					}
 					break;
 				}

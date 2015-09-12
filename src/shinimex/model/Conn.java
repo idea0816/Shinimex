@@ -17,7 +17,7 @@ public class Conn {
 	String databaseName;
 	String user;
 	String pw;
-	
+
 	Connection MyConn = null;
 	Statement stmt = null;
 	String rs_title = null;
@@ -56,8 +56,9 @@ public class Conn {
 					"ClassNotFound\n" + cnfe.toString(), "Message",
 					JOptionPane.WARNING_MESSAGE);
 		} catch (SQLException sqle) {
-			JOptionPane.showMessageDialog(null, "System set error\n" + sqle.toString(),
-					"Message", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(null,
+					"System set error\n" + sqle.toString(), "Message",
+					JOptionPane.WARNING_MESSAGE);
 		}
 	}
 
