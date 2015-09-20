@@ -11,9 +11,8 @@
 <link rel="stylesheet" type="text/css" href="css/editFormulaTab.css" />
 
 <script type="text/javascript" src="js/editFormulaTab.js"></script>
-<!-- 
-<script type="text/javascript" src="js/orderDateCheck.js"></script>
--->
+<script type="text/javascript" src="js/editFormula.js"></script>
+
 </head>
 <body>
 
@@ -34,7 +33,7 @@
 
 	<section class="block">
 		<article id="tab1">
-			<table>
+			<table id="listFormula">
 				<tr class="table_title">
 					<th>材料代號</th>
 					<th>中文品名</th>
@@ -44,8 +43,11 @@
 
 				<c:forEach items="${sessionScope.clzlList}" var="clzlList"
 					varStatus="status">
+					<tr>
+					<!--  
 					<tr onMouseOut="this.style.backgroundColor=''"
-						onMouseOver="this.style.backgroundColor='#B2C67F';">
+						onMouseOver="this.style.backgroundColor='#B2C67F';" >
+					-->
 						<td>${clzlList.cldh}</td>
 						<td>${clzlList.zwpm }</td>
 						<td>${clzlList.ywpm }</td>
@@ -64,9 +66,9 @@
 					<th>材料代號</th>
 					<th>中文品名</th>
 					<th>配方量%</th>
-					<!-- <th>配方用量KG</th>
+					<th>配方用量KG</th>
 					<th>USD單價</th>
-					<th>金額</th>-->
+					<th>金額</th>
 				</tr>
 
 				<c:forEach items="${sessionScope.clzlList}" var="clzlList"
