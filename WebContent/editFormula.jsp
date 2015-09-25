@@ -8,10 +8,12 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<link rel="stylesheet" type="text/css" href="css/editFormula.css" />
 <link rel="stylesheet" type="text/css" href="css/editFormulaTab.css" />
 
-<script type="text/javascript" src="js/editFormulaTab.js"></script>
 <script type="text/javascript" src="js/editFormula.js"></script>
+<script type="text/javascript" src="js/editFormulaTab.js"></script>
+<script type="text/javascript" src="js/jquery.blockUI.js"></script>
 
 </head>
 <body>
@@ -33,8 +35,9 @@
 
 	<section class="block">
 		<article id="tab1">
-			<table id="listFormula">
+			<table>
 				<tr class="table_title">
+					<th>選擇</th>
 					<th>材料代號</th>
 					<th>中文品名</th>
 					<th>Description</th>
@@ -43,25 +46,29 @@
 
 				<c:forEach items="${sessionScope.clzlList}" var="clzlList"
 					varStatus="status">
-					<tr>
-					<!--  
 					<tr onMouseOut="this.style.backgroundColor=''"
 						onMouseOver="this.style.backgroundColor='#B2C67F';" >
-					-->
+						<td><input type="radio" name="getFormula" value="${clzlList.cldh}" /></td>
 						<td>${clzlList.cldh}</td>
-						<td>${clzlList.zwpm }</td>
-						<td>${clzlList.ywpm }</td>
-						<td>${clzlList.cldj }</td>
+						<td>${clzlList.zwpm}</td>
+						<td>${clzlList.ywpm}</td>
+						<td>${clzlList.cldj}</td>
 					</tr>
 				</c:forEach>
 
 			</table>
 		</article>
 		<article id="tab2">
-			配方代號<input type="text"/>USD單價/KG<input type="text"/>一手重量<input type="text"/>
+			配方代號<input id="cldh" type="text" value="Not Yet Import Datas"/>
+			USD單價/KG<input type="text"/>
+			一手重量<input type="text"/>
+			<input type="button" value="Insert" />
+			<input id="Delete" type="button" value="Delete" />
+			<input type="button" value="Update" />
 			<br/>
-			<table>
+			<table id="Formula_getcldh">
 				<tr class="table_title">
+					<th id="deleteCol" style="display:none">Delete</th>
 					<th>類別</th>
 					<th>材料代號</th>
 					<th>中文品名</th>
@@ -70,7 +77,10 @@
 					<th>USD單價</th>
 					<th>金額</th>
 				</tr>
-
+				<tr>
+					<td><input id="deleteCB" type="checkbox" style="display:none"></td>
+				</tr>
+				<!--  
 				<c:forEach items="${sessionScope.clzlList}" var="clzlList"
 					varStatus="status">
 					<tr onMouseOut="this.style.backgroundColor=''"
@@ -81,8 +91,9 @@
 						<td>${clzlList.cldj }</td>
 					</tr>
 				</c:forEach>
+				-->
 			</table>
-			
+			<!--  
 			<table>
 				<tr class="table_title">
 					<th>類別</th>
@@ -102,6 +113,7 @@
 					</tr>
 				</c:forEach>
 			</table>
+			-->
 		</article>
 		<article id="tab3">
 			<p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia,

@@ -70,21 +70,9 @@ public class EditFormula extends HttpServlet {
 		}
 
 		// 取得第一個配方送到頁面去當預設畫面
-		conn.rs_title = "SELECT cldh,lb,cldhz,clyl,phr,cldj FROM clzlsl WHERE cldh ='"
-				+ clzlList.get(0).getCldh() + "'";
-
-		// private String cldh;
-		// private String lb;
-		// private String cldhz;
-		// private Double clyl;
-		// private Double phr;
-		// private Double cldj;
-
-		System.out.println(conn.rs_title);
-
-		// for(ClzlData clzlData1:clzlList){
-		// System.out.println(clzlData1.getCldh()+","+clzlData1.getZwpm()+","+clzlData1.getYwpm()+","+clzlData1.getCldj());
-		// }
+		// conn.rs_title =
+		// "SELECT cldh,lb,cldhz,clyl,phr,cldj FROM clzlsl WHERE cldh ='"
+		// + clzlList.get(0).getCldh() + "'";
 
 		// =====背景更新程式 Start=====
 
