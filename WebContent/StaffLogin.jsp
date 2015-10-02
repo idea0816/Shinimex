@@ -8,10 +8,12 @@
 	href="images/SHV1_icon.ico" />
 
 <link rel="stylesheet" type="text/css" href="css/reset.css" />
-<link rel="stylesheet" type="text/css" href="css/table.css" />
+<link rel="stylesheet" type="text/css" href="css/a_jspcommonSet.css" />
 
+<!--  
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="js/forJsp.js"></script>
+-->
 
 <!--[if IE]>
 	<script src="js/html5.js"></script>

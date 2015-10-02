@@ -16,8 +16,8 @@ $(document).ready(function() {
 		$("#content").load("editFormula.do");
 	});
 
-	$("#cu").click(function() {
-		$("#content").load("cu.html");
+	$("#shipMent").click(function() {
+		$("#content").load("pc_Shipment.jsp");
 	});
 
 });

@@ -1,19 +1,6 @@
-#header {
-	height: 40px;
-	margin-left: -10px;
-	margin-right: -10px;
-	background-image: url(../images/SHV2_RBsmall.png);
-	background-repeat: no-repeat;
-	background-position: -5% 45%;
-	background-color: #00C78C;
-	border-style: none;
-}
+@charset "utf-8";
+/* jsp CSS Table Document */
 
-#wrapper {
-	width: 90%;
-	margin: auto; /*版面居中對齊*/
-	border: 2px solid #DEECDF; /* 淺綠 */
-}
 
 #content table {
 	width: 100%;
@@ -21,6 +8,7 @@
 	border-bottom-width: 5px;
 	border-bottom-style: solid;
 	border-bottom-color: #278092;
+	table-layout: fixed;/*列寬由表格寬度及列寬決定*/
 }
 
 .table_title {
@@ -30,38 +18,20 @@
 	background-color: #278092;
 }
 
+td {
+	font-size: 14px;
+	text-align: right;
+}
+
+td.td_center {
+	text-align: center;
+}
+
 /*
 #content tr td {
 	width: 100px;
 	word-break: break-all;
 	
 }
+
 */
-#content input{
-	width: 150px;
-	height: 20px;
-	font-size: 12px;
-	margin-top: 5px;
-	margin-right: 10px;
-	margin-bottom: 5px;
-	margin-left: 10px;
-}
-
-
-#content input[type="checkbox"]{
-	width : 120px;
-	height: 20px;
-	fornt-size: 12px;
-	text-align: center;
-}
-
-#footer {
-	font-size: 10px;
-	text-align: center;
-	color: #DEECDF;
-	margin-left: -10px;
-	margin-right: -10px;
-	padding-top: 0.1px;
-	padding-bottom: 0.1px;
-	background-color: #00C78C;
-}

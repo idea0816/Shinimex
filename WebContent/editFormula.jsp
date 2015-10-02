@@ -37,7 +37,7 @@
 		<article id="tab1">
 			<table>
 				<tr class="table_title">
-					<th>選擇</th>
+					<th style="width:5%">選擇</th>
 					<th>材料代號</th>
 					<th>中文品名</th>
 					<th>Description</th>
@@ -48,8 +48,8 @@
 					varStatus="status">
 					<tr onMouseOut="this.style.backgroundColor=''"
 						onMouseOver="this.style.backgroundColor='#B2C67F';" >
-						<td><input type="radio" name="getFormula" value="${clzlList.cldh}" /></td>
-						<td>${clzlList.cldh}</td>
+						<td class="td_center"><input type="radio" name="getFormula" value="${clzlList.cldh}" /></td>
+						<td class="td_center">${clzlList.cldh}</td>
 						<td>${clzlList.zwpm}</td>
 						<td>${clzlList.ywpm}</td>
 						<td>${clzlList.cldj}</td>
@@ -59,61 +59,33 @@
 			</table>
 		</article>
 		<article id="tab2">
-			配方代號<input id="cldh" type="text" value="Not Yet Import Datas"/>
-			USD單價/KG<input type="text"/>
-			一手重量<input type="text"/>
+			配方代號<input id="cldh_cldh" type="text" value="Not Yet Import Datas"/>
+			USD單價/KG<input id="cldh_cldj" type="text"/>
+			一手重量<input id="cldh_TotKgs" type="text"/>
 			<input type="button" value="Insert" />
 			<input id="Delete" type="button" value="Delete" />
 			<input type="button" value="Update" />
 			<br/>
 			<table id="Formula_getcldh">
 				<tr class="table_title">
-					<th id="deleteCol" style="display:none">Delete</th>
-					<th>類別</th>
+					<th style="width:5%">類別</th>
 					<th>材料代號</th>
 					<th>中文品名</th>
-					<th>配方量%</th>
+					<th>PHR</th>
 					<th>配方用量KG</th>
 					<th>USD單價</th>
 					<th>金額</th>
+					<th id="deleteCol" style="width:5%">Delete</th>
 				</tr>
-				<tr>
-					<td><input id="deleteCB" type="checkbox" style="display:none"></td>
+				<tbody>
+				<tr id="edidList">
+					<!-- <td><input id="deleteCB" type="checkbox" style="display:none"></td>-->
+					<td>test</td>
+					<td>test</td>
+					<td>test</td>
 				</tr>
-				<!--  
-				<c:forEach items="${sessionScope.clzlList}" var="clzlList"
-					varStatus="status">
-					<tr onMouseOut="this.style.backgroundColor=''"
-						onMouseOver="this.style.backgroundColor='#B2C67F';">
-						<td>${clzlList.cldh}</td>
-						<td>${clzlList.zwpm }</td>
-						<td>${clzlList.ywpm }</td>
-						<td>${clzlList.cldj }</td>
-					</tr>
-				</c:forEach>
-				-->
+				</tbody>
 			</table>
-			<!--  
-			<table>
-				<tr class="table_title">
-					<th>類別</th>
-					<th>材料代號</th>
-					<th>中文品名</th>
-					<th>配方量%</th>
-				</tr>
-
-				<c:forEach items="${sessionScope.clzlList}" var="clzlList"
-					varStatus="status">
-					<tr onMouseOut="this.style.backgroundColor=''"
-						onMouseOver="this.style.backgroundColor='#B2C67F';">
-						<td>${clzlList.cldh}</td>
-						<td>${clzlList.zwpm }</td>
-						<td>${clzlList.ywpm }</td>
-						<td>${clzlList.cldj }</td>
-					</tr>
-				</c:forEach>
-			</table>
-			-->
 		</article>
 		<article id="tab3">
 			<p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia,

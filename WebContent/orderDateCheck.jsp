@@ -22,9 +22,9 @@
 	-->
 
 	<table>
-		<caption>接單日期修正</caption>
+		<caption><label class="label_title">接單日期修正</label></caption>
 		<tr class="table_title">
-			<th><input id="checkAll" type="checkbox"></th>
+			<th style="width:5%"><input id="checkAll" type="checkbox"></th>
 			<th>訂單編號</th>
 			<th>接單日期</th>
 			<th>修正</th>
@@ -33,7 +33,7 @@
 			varStatus="status">
 			<tr onMouseOut="this.style.backgroundColor=''"
 				onMouseOver="this.style.backgroundColor='#B2C67F';">
-				<td><input name="checkBox" value="ddrq${ddrqCheck.key}"
+				<td class="td_center"><input name="checkBox" value="ddrq${ddrqCheck.key}"
 					type="checkbox"></td>
 				<td>${ddrqCheck.key}</td>
 				<td>${ddrqCheck.value }</td>
@@ -44,9 +44,9 @@
 	</table>
 
 	<table>
-		<caption>交貨日期修正</caption>
+		<caption><label class="label_title">交貨日期修正</label></caption>
 		<tr class="table_title">
-			<th></th>
+			<th style="width:5%"></th>
 			<th>訂單編號</th>
 			<th>交貨日期</th>
 			<th>修正</th>
@@ -55,7 +55,7 @@
 			varStatus="status">
 			<tr onMouseOut="this.style.backgroundColor=''"
 				onMouseOver="this.style.backgroundColor='#B2C67F';">
-				<td><input name="checkBox" value="ddjq${ddjqCheck.key}"
+				<td class="td_center"><input name="checkBox" value="ddjq${ddjqCheck.key}"
 					type="checkbox"></td>
 				<td>${ddjqCheck.key}</td>
 				<td>${ddjqCheck.value }</td>
@@ -66,9 +66,9 @@
 	</table>
 
 	<table>
-		<caption>生產日期修正</caption>
+		<caption><label class="label_title">生產日期修正</label></caption>
 		<tr class="table_title">
-			<th></th>
+			<th style="width:5%"></th>
 			<th>生產編號</th>
 			<th>生產日期</th>
 			<th>修正</th>
@@ -77,7 +77,7 @@
 			varStatus="status">
 			<tr onMouseOut="this.style.backgroundColor=''"
 				onMouseOver="this.style.backgroundColor='#B2C67F';">
-				<td><input name="checkBox" value="chrq${chrqCheck.key}"
+				<td class="td_center"><input name="checkBox" value="chrq${chrqCheck.key}"
 					type="checkbox"></td>
 				<td>${chrqCheck.key}</td>
 				<td>${chrqCheck.value }</td>

@@ -1,0 +1,125 @@
+@charset "utf-8";
+/* jsp CSS common Set Document JSP頁面共用設定 */
+#header {
+	height: 40px;
+	margin-left: -10px;
+	margin-right: -10px;
+	background-image: url(../images/SHV2_RBsmall.png);
+	background-repeat: no-repeat;
+	background-position: -5% 45%;
+	background-color: #00C78C;
+	border-style: none;
+}
+
+#wrapper {
+	width: 90%;
+	margin: auto; /*版面居中對齊*/
+	border: 2px solid #DEECDF; /* 淺綠 */
+	font-family: "Arial", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica", "微軟正黑體", "sans-serif";
+}
+
+#footer {
+	font-size: 10px;
+	text-align: center;
+	color: #DEECDF;
+	margin-left: -10px;
+	margin-right: -10px;
+	padding-top: 0.1px;
+	padding-bottom: 0.1px;
+	background-color: #00C78C;
+}
+
+/*Menu Items Setting Start*/
+#button {
+	/*高度設定*/
+	/*文字設定*/
+	font-weight: bolder;
+	color: #FFF;
+	font-size: 14px;
+	/*背景色設定*/
+	background-color: #6E6E6E;
+	/*將內定的邊距清除*/
+	margin: 0px;
+	/*將內定的內距清除*/
+	padding: 0px;
+}
+
+#button li {
+	/* 設定清單文字範圍的寬度 */
+	width: 178px;
+	/* 讓清單文字居中對齊 */
+	text-align: center;
+	/* 去除清單文字前面的小圓點*/
+	list-style-type: none;
+	/* 設定背景色 */
+	background-color: #6E6E6E;
+	/* 讓各個清單元素靠左對齊 */
+	float: left;
+	/* 設定字距為2px */
+	letter-spacing: 2px;
+	/* 設定左邊的白邊樣式 */
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #FFF;
+	/* 右邊留白1像素 */
+	margin-right: 1px;
+}
+
+#button li a {
+	display: block;
+	line-height: 22px;
+	/*height:20px;*/
+	color: #FFF;
+	text-decoration: none;
+}
+
+#button li a:hover {
+	background-color: #39919F
+}
+
+/*Menu Items Setting End*/
+
+/*input Setting Start*/
+input[type="text"], input[type="password"], input[type="date"] {
+	font-size: 14px;
+	height: 20px;
+	width: 160px;
+	padding: 3px; 
+	margin: 10px;
+	border : 1px solid #00C78C;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #00C78C;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus {
+	border-color: #036347;
+}
+
+input[type="button"], input[type="submit"] {
+	font-size: 10px;
+	line-height: 150%;
+	color: #fff;
+	height: 28px;
+	width: 110px;
+	background: #00C78C;
+	border: 3px solid #03825C;;
+	border-top: 2px solid #049C6F;
+	border-left: 2px solid #049C6F;
+	cursor: pointer;
+	cursor: hand;
+	border-radius: 5px;
+	vertical-align:middle;
+	margin-left: 5px;
+}
+/*input Setting End*/
+
+/*label Setting Start*/
+label.label_title {
+	font-size: 25px;
+}
+
+label.label_usual {
+	font-size: 12px;
+}
+/*label Setting End*/
