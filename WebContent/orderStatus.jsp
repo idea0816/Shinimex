@@ -7,12 +7,12 @@
 <title>訂單產能狀況表-OrderStatus Ver1509</title>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!-- 
 
+<link rel="stylesheet" type="text/css" href="css/table.css" />
+<!-- 
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="js/jquery.blockUI.js"></script>
 <script type="text/javascript" src="js/pc_Progress.js"></script>
-
 -->
 
 </head>

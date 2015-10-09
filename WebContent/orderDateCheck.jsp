@@ -10,6 +10,8 @@
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="js/jquery.blockUI.js"></script>
 -->
+<link rel="stylesheet" type="text/css" href="css/table.css" />
+
 <script type="text/javascript" src="js/orderDateCheck.js"></script>
 
 </head>

@@ -1,3 +1,5 @@
+//forTab 切換分頁用js Ver.1508
+
 $(document).ready(function() {
 	$('ul.tabs li:first').addClass('active');
 	$('.block article').hide();

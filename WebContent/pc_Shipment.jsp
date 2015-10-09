@@ -13,10 +13,12 @@
 </head>
 <body>
 	<p>
-	<select>
+	
+	<input type="text" list="inputtype" placeholder="How To Input?" />
+	<datalist id="inputtype">
 		<option>By ScanCode</option>
 		<option>By KHPO</option>
-	</select>
+	</datalist>
 	<input type="text" />
 	
 	<br />

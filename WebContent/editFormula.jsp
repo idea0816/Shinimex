@@ -8,11 +8,12 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<link rel="stylesheet" type="text/css" href="css/table.css" />
 <link rel="stylesheet" type="text/css" href="css/editFormula.css" />
-<link rel="stylesheet" type="text/css" href="css/editFormulaTab.css" />
+<link rel="stylesheet" type="text/css" href="css/forTab.css" />
 
 <script type="text/javascript" src="js/editFormula.js"></script>
-<script type="text/javascript" src="js/editFormulaTab.js"></script>
+<script type="text/javascript" src="js/forTab.js"></script>
 <script type="text/javascript" src="js/jquery.blockUI.js"></script>
 
 </head>
@@ -22,7 +23,6 @@
 	session.setAttribute("clzlList", clzlList);
 	-->
 
-	This is editFormula!!!
 	<br />
 
 	<ul class="tabs">
@@ -35,7 +35,7 @@
 
 	<section class="block">
 		<article id="tab1">
-			<table>
+			<table >
 				<tr class="table_title">
 					<th style="width:5%">選擇</th>
 					<th>材料代號</th>
@@ -43,7 +43,7 @@
 					<th>Description</th>
 					<th>Price</th>
 				</tr>
-
+				
 				<c:forEach items="${sessionScope.clzlList}" var="clzlList"
 					varStatus="status">
 					<tr onMouseOut="this.style.backgroundColor=''"
@@ -55,17 +55,36 @@
 						<td>${clzlList.cldj}</td>
 					</tr>
 				</c:forEach>
-
 			</table>
 		</article>
 		<article id="tab2">
 			配方代號<input id="cldh_cldh" type="text" value="Not Yet Import Datas"/>
 			USD單價/KG<input id="cldh_cldj" type="text"/>
 			一手重量<input id="cldh_TotKgs" type="text"/>
-			<input type="button" value="Insert" />
+			<input id="Insert" type="button" value="Insert" />
 			<input id="Delete" type="button" value="Delete" />
 			<input type="button" value="Update" />
 			<br/>
+			<!-- 原物料列表 Table //Get cldh,zwpm,cldj,YYSL For 原物料-->
+			<table id="getcldhz" style="width:70%;margin:auto;display:none">
+				<tr class="table_title">
+					<th style="width:10%">Add</th>
+					<th style="width:10%">LB</th>
+					<th style="width:10%">Amount</th>
+					<th>原物料名稱</th>
+					<th style="width:15%">Price</th>
+					<th style="width:15%">庫存</th>
+				</tr>
+				<tr>
+					<td>test</td>
+					<td>test</td>
+					<td>test</td>
+					<td>test</td>
+				</tr>
+			</table>
+			
+			
+			<!-- 配方明細列表 Table -->
 			<table id="Formula_getcldh">
 				<tr class="table_title">
 					<th style="width:5%">類別</th>

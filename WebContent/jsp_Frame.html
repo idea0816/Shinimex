@@ -10,7 +10,9 @@
 <!-- common import -->
 <link rel="stylesheet" type="text/css" href="css/reset.css" />
 <link rel="stylesheet" type="text/css" href="css/a_jspcommonSet.css" />
+<!--  
 <link rel="stylesheet" type="text/css" href="css/table.css" />
+-->
 
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="js/forJsp.js"></script>
@@ -20,9 +22,21 @@
 <link rel="stylesheet" href="css/alertify.default.css" />
 <script type="text/javascript" src="js/alertify.min.js"></script>
 
+<!-- flot import -->
+<script type="text/javascript" src="js/jquery.flot.min.js"></script>
+<script type="text/javascript" src="js/jquery.flot.symbol.min.js"></script>
+<script type="text/javascript" src="js/jquery.flot.time.min.js"></script>
+<script type="text/javascript" src="js/orderData_yearpicture.js"></script>
+
 <!--[if IE]>
 	<script src="js/html5.js"></script>
 <![endif]-->
+
+<!--[if lte IE 8]>
+	<script language="javascript" type="text/javascript" src="js/excanvas.min.js"></script>
+<![endif]-->
+
+
 
 </head>
 <body>
@@ -31,34 +45,21 @@
 
 	<div id="wrapper">
 	
-	<ul id="button">
+		<ul id="button">
 			<li><a href="jsp_Frame.html">Home</a></li>
+			<li><a id="sales_Datalist" href="#">Sales Data</a></li>
 			<li><a id="pc_Progress" href="#">pc_Proess</a></li>
 			<li><a id="orderStatus" href="#">OrderStaus</a></li>
 			<li><a id="editFormula" href="#">editFormula</a></li>
 			<li><a id="shipMent" href="#">shipMent</a></li>
-	</ul>
-	<br />
-	<!-- 
-		<nav>
-			<ul>
-				<li><a href="">Home</a></li>
-				<li>
-					<a href="">Product Control</a>
-					<ul>
-						<li><a href="">pc_Progress</a></li>
-					</ul>
-				</li>
-				<li><a href="">Other</a></li>
-				<li><a href="">Help</a></li>
-			</ul>
-		</nav>
-		
-	-->
-
-
+		</ul>
+		<br /><p>
 
 		<div id="content">
+			<p><br/>
+			<div id="orderData_yearpicture" style="width:90%;height:450px;margin:auto"></div>
+			
+			<!--  
 			<br />
 				<span id='barcode' style='font-family:3 of 9 Barcode'>*C004004004*</span><br>
 				<span id='barcode' style='font-family:"3 of 9 Barcode"'>*C004004004*</span>
@@ -70,14 +71,7 @@
 			<a id="editFormula" href="#">Edit Formula</a>
 			<br />
 			<a id="shipMent" href="#">Shipment</a>
-			
-			
-<!-- 
-			
-			<br>
-			
-			<a id="f_list_for_Customs" href="#">formula list for Customs</a>
- -->
+			-->
 		</div>
 	</div>
 
