@@ -24,6 +24,10 @@ $(document).ready(function() {
 		$("#content").load("pc_Shipment.jsp");
 	});
 	
+	$("#produce").click(function() {
+		$("#content").load("pc_Produce.jsp");
+	});
+	
 
 	
 	//Roll-Mixing Machine

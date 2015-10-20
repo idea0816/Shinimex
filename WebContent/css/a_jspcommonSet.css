@@ -83,7 +83,7 @@
 input[type="text"], input[type="password"], input[type="date"] {
 	font-size: 14px;
 	height: 20px;
-	width: 160px;
+	width: 150px;
 	padding: 3px; 
 	margin: 10px;
 	border : 1px solid #00C78C;
@@ -101,7 +101,7 @@ input[type="button"], input[type="submit"] {
 	line-height: 150%;
 	color: #fff;
 	height: 28px;
-	width: 110px;
+	width: 100px;
 	background: #00C78C;
 	border: 3px solid #03825C;;
 	border-top: 2px solid #049C6F;

@@ -101,7 +101,7 @@ public class OrderStatus extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		// 判斷昃否要修改日期
+		// 判斷是否要修改日期
 		if (ddrqCheck.isEmpty() && ddjqCheck.isEmpty() && chrqCheck.isEmpty()) {
 			// Complete orderStatus
 			ArrayList<String> outsoles = new ArrayList<String>();// 大底
