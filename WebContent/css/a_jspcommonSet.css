@@ -15,7 +15,7 @@
 	width: 90%;
 	margin: auto; /*版面居中對齊*/
 	border: 2px solid #DEECDF; /* 淺綠 */
-	font-family: "Arial", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica", "微軟正黑體", "sans-serif";
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif, "Arial", "微軟正黑體";
 }
 
 #footer {

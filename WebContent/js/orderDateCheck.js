@@ -5,7 +5,7 @@ $(document).ready(function() {
 		$('input:checkbox').prop('checked', this.checked);
 	});
 	
-	alertify.alert("出現此畫面代表訂單資料中的日期格式有問題<br>請修正日期或刪除資料<br>也可以連絡 IT 協助解決這個問題!")
+	alertify.alert("出現此畫面代表訂單資料中的日期格式有問題<br>請修正日期或刪除資料<br>也可以連絡 IT 協助解決這個問題!");
 
 	// 設定確認視窗中的按鈕文字
 	alertify.set({
@@ -35,7 +35,7 @@ $(document).ready(function() {
 				});
 			} else {
 				// cancel!!
-				alert("Cancel")
+				//alert("Cancel")
 			}
 		});
 
@@ -67,12 +67,12 @@ $(document).ready(function() {
 				});
 			} else {
 				// cancel!!
-				alert("Cancel")
+				//alert("Cancel")
 			}
 		});
 
 	});
-
+	
 });
 
 // 警告視窗

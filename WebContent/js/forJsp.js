@@ -24,7 +24,7 @@ $(document).ready(function() {
 		$("#content").load("pc_Shipment.jsp");
 	});
 	
-	$("#produce").click(function() {
+	$("#product").click(function() {
 		$("#content").load("pc_Produce.jsp");
 	});
 	

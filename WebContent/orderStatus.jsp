@@ -5,10 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>訂單產能狀況表-OrderStatus Ver1509</title>
+<!-- 2016-03-04 增加其他年份查詢功能 -->
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <link rel="stylesheet" type="text/css" href="css/table.css" />
+
+<script type="text/javascript" src="js/orderStatus.js"></script>
 <!-- 
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="js/jquery.blockUI.js"></script>
@@ -19,14 +22,16 @@
 <body>
 
 	<!--  
+	session.setAttribute("year", year);
 	session.setAttribute("outsoles", outsoles);
 	session.setAttribute("pieces", pieces);
 	session.setAttribute("delivery", delivery);
 	session.setAttribute("capacity", capacity);
+	session.setAttribute("forchoiceyears", forchoiceyears);
 	-->
 
 	<table border="1">
-		<caption><label class="label_title">Shinimex 訂單產能狀況表</label></caption>
+		<caption><label class="label_title">Shinimex 訂單產能狀況表 - <%= session.getAttribute("year") %></label></caption>
 		<tr class="table_title">
 			<th colspan="2"></th>
 			<th>Jan</th>
@@ -89,9 +94,16 @@
 	</label>
 	<br />
 	<br />
-	<input type="button" value="PRINT">
-	<input type="button" value="Export to Excel">
-	<input type="button" value="Export to PDF">
+	<input id="choiceyear" list="yearlist" type="text" placeholder="Back to the...?" />
+	<datalist id="yearlist">
+		<c:forEach items="${sessionScope.forchoiceyears}" var="forchoiceyears" varStatus="status">
+				<option>${forchoiceyears}</option>
+		</c:forEach>
+	</datalist>
+	<input id="getchoiceyear" type="button" value="Jump" />
+	<input type="button" value="PRINT" />
+	<input type="button" value="Export to Excel" />
+	<input type="button" value="Export to PDF" />
 
 </body>
 </html>

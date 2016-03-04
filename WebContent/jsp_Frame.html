@@ -10,23 +10,24 @@
 <!-- common import -->
 <link rel="stylesheet" type="text/css" href="css/reset.css" />
 <link rel="stylesheet" type="text/css" href="css/a_jspcommonSet.css" />
-<!--  
+<link rel="stylesheet" type="text/css" href="css/menu.css" />
 <link rel="stylesheet" type="text/css" href="css/table.css" />
--->
 
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="js/forJsp.js"></script>
+
 
 <!-- alert box import -->
 <link rel="stylesheet" href="css/alertify.core.css" />
 <link rel="stylesheet" href="css/alertify.default.css" />
 <script type="text/javascript" src="js/alertify.min.js"></script>
-
 <!-- flot import -->
 <script type="text/javascript" src="js/jquery.flot.min.js"></script>
 <script type="text/javascript" src="js/jquery.flot.symbol.min.js"></script>
 <script type="text/javascript" src="js/jquery.flot.time.min.js"></script>
+<!--  
 <script type="text/javascript" src="js/orderData_yearpicture.js"></script>
+-->
 
 <!--[if IE]>
 	<script src="js/html5.js"></script>
@@ -40,40 +41,76 @@
 
 </head>
 <body>
-	<div id="header">
-	</div>
+	<div id="header"></div>
 
 	<div id="wrapper">
-	
-		<ul id="button">
-			<li><a href="jsp_Frame.html">Home</a></li>
-			<li><a id="sales_Datalist" href="#">Sales Data</a></li>
-			<!--  
-			<li><a id="pc_Progress" href="#">pc_Proess</a></li>
-			-->
-			<li><a id="orderStatus" href="#">OrderStaus</a></li>
-			<li><a id="editFormula" href="#">editFormula</a></li>
-			<li><a id="produce" href="#">Produce</a></li>
-			<li><a id="shipMent" href="#">shipMent</a></li>
-		</ul>
-		<br /><p>
+		<nav>
+			<!--  <ul id="button">-->
+			<ul style="background-color: #00C78C">
+				<li><a href="jsp_Frame.html">Home</a></li>
+				<!-- Sales Page -->
+				<li><a href="#">Sales<span class="caret"></span></a>
+					<div>
+						<ul>
+							<li><a id="orderStatus" href="#">OrderStaus</a></li>
+							<li><a id="sales_Datalist" href="#">Sales Data</a></li>
+						</ul>
+					</div></li>
+				<!-- Roll-Mixing Page -->
+				<li><a href="#">Roll-Mixing<span class="caret"></span></a>
+					<div>
+						<ul>
+							<li><a id="editFormula" href="#">editFormula</a></li>
+						</ul>
+					</div>
+				</li>
+				<!-- Product Control Page -->
+				<li><a href="#">Product Control<span class="caret"></span></a>
+					<div>
+						<ul>
+							<li><a id="pc_Progress" href="#">pc_Proess</a></li>
+							<li><a id="product" href="#">product</a></li>
+							<li><a id="shipMent" href="#">shipMent</a></li>
+						</ul>
+					</div>
+				</li>
+				<!-- Financial Page -->
+				<li>
+					<a href="#">Financial<span class="caret"></span></a>
+					<div>
+						<ul>
+							<li><a href="#">Null</a></li>
+						</ul>
+					</div>
+				</li>
+				<!-- Analysis Page -->
+				<li>
+					<a href="#">Analysis<span class="caret"></span></a>
+					<div>
+						<ul>
+							<li><a href="#">Null</a></li>
+						</ul>
+					</div>
+				</li>
 
+				
+				
+			</ul>
+		</nav>
+
+		<br />
+		<p>
 		<div id="content">
-			<p><br/>
-			<div id="orderData_yearpicture" style="width:90%;height:450px;margin:auto"></div>
-			
-			<!--  
+			<!--
+			<p>
+				<br />
+			<div id="orderData_yearpicture"
+				style="width: 90%; height: 450px; margin: auto"></div>
+
+			  
 			<br />
 				<span id='barcode' style='font-family:3 of 9 Barcode'>*C004004004*</span><br>
 				<span id='barcode' style='font-family:"3 of 9 Barcode"'>*C004004004*</span>
-			<br>
-			<a id="pc_Progress" href="#">pc_Proess</a>
-			<br>
-			<a id="orderStatus" href="#">OrderStaus</a>
-			<br />
-			<a id="editFormula" href="#">Edit Formula</a>
-			<br />
-			<a id="shipMent" href="#">Shipment</a>
 			-->
 		</div>
 	</div>

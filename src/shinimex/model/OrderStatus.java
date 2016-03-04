@@ -20,6 +20,8 @@ import javax.servlet.http.HttpSession;
 /*
  * @author Eric Chen.,CPY
  * @version Create Time:2015年8月18日
+ * 
+ * 2016-03-04 增加其他年份查詢功能
  *
  */
 @SuppressWarnings("serial")
@@ -30,10 +32,23 @@ public class OrderStatus extends HttpServlet {
 
 		Conn conn = new Conn();
 		DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
-
+		
+		
+		// orderStatus 取得選擇年
+		String choiceyear = req.getParameter("choiceyear");
 		// 取得今年年份
 		Calendar cal = Calendar.getInstance();
-		int year = cal.get(Calendar.YEAR);
+		int year;
+		int nowyear;
+		if(choiceyear == null){
+			year = cal.get(Calendar.YEAR);
+			nowyear = cal.get(Calendar.YEAR);
+		}else{
+			year = Integer.parseInt(choiceyear);
+			nowyear = cal.get(Calendar.YEAR);
+		}
+		
+		//int year = 2010;
 
 		// 取得今天日期加6個月
 		cal.add(Calendar.MONTH, 6);
@@ -108,6 +123,7 @@ public class OrderStatus extends HttpServlet {
 			ArrayList<String> pieces = new ArrayList<String>();// 飾片
 			ArrayList<String> delivery = new ArrayList<String>();// 交貨
 			ArrayList<String> capacity = new ArrayList<String>();// 產能
+			ArrayList<String> forchoiceyears = new ArrayList<String>();//取得年份資料
 
 			// 大底接單量
 			conn.rs_title = "SELECT SUM(DDZL.Pairs) outsoles FROM DDZL DDZL,XXZL XXZL WHERE DATEPART(YEAR, DDZL.DDRQ) = '"
@@ -204,11 +220,18 @@ public class OrderStatus extends HttpServlet {
 				i_capacity += 1;
 			}
 			capacity.add(String.valueOf(df.format(sumcapacity)));
+			
+			//取得年份資料
+			for(int i = 2010; i <= nowyear; i++){
+				forchoiceyears.add(Integer.toString(i));
+			}
 
+			session.setAttribute("year", year);
 			session.setAttribute("outsoles", outsoles);
 			session.setAttribute("pieces", pieces);
 			session.setAttribute("delivery", delivery);
 			session.setAttribute("capacity", capacity);
+			session.setAttribute("forchoiceyears", forchoiceyears);
 			resp.sendRedirect("orderStatus.jsp");
 			// RequestDispatcher rd =
 			// req.getRequestDispatcher("orderStatus.jsp");
