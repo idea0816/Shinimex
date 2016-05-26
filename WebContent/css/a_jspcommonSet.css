@@ -112,6 +112,23 @@ input[type="button"], input[type="submit"] {
 	vertical-align:middle;
 	margin-left: 5px;
 }
+
+textarea{
+	font-size: 14px;
+	height: 150px;
+	width: 500px;
+	padding: 3px; 
+	margin: 10px;
+	border : 1px solid #00C78C;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #00C78C;
+}
+
+textarea:focus {
+	border-color: #036347;
+}
+
 /*input Setting End*/
 
 /*label Setting Start*/

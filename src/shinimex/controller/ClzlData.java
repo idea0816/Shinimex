@@ -11,8 +11,9 @@ public class ClzlData {
 	private String zwpm;
 	private String ywpm;
 	private Double cldj;
-	
-	public ClzlData(){}
+
+	public ClzlData() {
+	}
 
 	public ClzlData(String cldh, String zwpm, String ywpm, Double cldj) {
 		super();

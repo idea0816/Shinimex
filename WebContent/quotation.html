@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--<%@page contentType="text/html; charset=UTF-8"%>--><!--  避免JSP出現亂碼 -->
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>業務報價 Quotation Ver1603</title>
+
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	<script src="js/quotation.js"></script>
+</head>
+<body>
+	<!-- Brands from kfzl-->
+	<input id="choiceBrands" list="brands" type="text" placeholder="Brands" />
+	<datalist id="brands">
+		<option>Adidas</option>
+		<option>Puma</option>
+	</datalist>
+	<!-- Season -->
+	<input id="choiceSeason" list="season" type="text" placeholder="Season" />
+	<datalist id="season">
+		<option>Add New...</option>
+		<option>AW</option>
+		<option>FW</option>
+		<option>SS</option>
+	</datalist>
+	<!-- Zone -->
+	<input list="zoneStart" type="date" placeholder="Zone-Start" />
+	<input list="zoneEnd" type="date" Placeholder="Zone-End" />
+
+	<input type="button" value="LIST" />
+
+	<!-- New Season -->
+	<div id="newSeason" style="display:none">
+		This is Test
+	</div>
+	
+</body>
+</html>

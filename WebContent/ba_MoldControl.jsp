@@ -4,14 +4,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>配方資料管理 editFormula Ver1509</title>
+<title>模具資料管理 ba_MoldControl Ver1605</title>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <link rel="stylesheet" type="text/css" href="css/table.css" />
 <link rel="stylesheet" type="text/css" href="css/forTab.css" />
 
-<script type="text/javascript" src="js/editFormula.js"></script>
+<script type="text/javascript" src="js/ba_MoldControl.js"></script>
 <script type="text/javascript" src="js/forTab.js"></script>
 <script type="text/javascript" src="js/jquery.blockUI.js"></script>
 
@@ -19,14 +19,15 @@
 <body>
 
 	<!--  
-	session.setAttribute("clzlList", clzlList);
+	session.setAttribute("moldList", moldList);
+	session.setAttribute("summjsl", summjsl);
 	-->
 
 	<br />
 
 	<ul class="tabs">
-		<li><a href="#tab1">Formula</a></li>
-		<li><a href="#tab2">List</a></li>
+		<li><a href="#tab1">Mold Data</a></li>
+		<li><a href="#tab2">Mold List</a></li>
 		<li><a href="#tab3">Other</a></li>
 	</ul>
 
@@ -34,35 +35,44 @@
 
 	<section class="block">
 		<article id="tab1">
+			模具總數量<input id="sum_mjsl" type="text" placeholder="summjsl" value="${summjsl}"/>		
+			<input id="KHDH" type="text" list="KHDHlist" placeholder="客戶名稱" >
+				<datalist id="KHDHlist"></datalist>
+				
+			<input id="getDatas" type="button" value="Get Datas" >
 			<table >
 				<tr class="table_title">
 					<th style="width:5%">選擇</th>
-					<th>材料代號</th>
-					<th>中文品名</th>
-					<th>Description</th>
-					<th>Price</th>
+					<th>模具編號</th>
+					<th>模具類型</th>
+					<th>客戶簡稱</th>
+					<th>鞋廠簡稱</th>
+					<th>模具數量</th>
+					<th>國別</th>
 				</tr>
-				
-				<c:forEach items="${sessionScope.clzlList}" var="clzlList"
+				<c:forEach items="${sessionScope.moldList}" var="moldList"
 					varStatus="status">
 					<tr onMouseOut="this.style.backgroundColor=''"
 						onMouseOver="this.style.backgroundColor='#B2C67F';" >
-						<td class="td_center"><input type="radio" name="getFormula" value="${clzlList.cldh}" /></td>
-						<td class="td_center">${clzlList.cldh}</td>
-						<td>${clzlList.zwpm}</td>
-						<td>${clzlList.ywpm}</td>
-						<td>${clzlList.cldj}</td>
+						<td class="td_center"><input type="radio" name="getMold" value="${moldList.mjbh}" /></td>
+						<td class="td_center">${moldList.mjbh}</td>
+						<td>${moldList.lbdh}</td>
+						<td>${moldList.kfjc}</td>
+						<td>${moldList.kfjc1}</td>
+						<td>${moldList.mjsl}</td>
+						<td>${moldList.gbbh}</td>
 					</tr>
 				</c:forEach>
 			</table>
 		</article>
 		<article id="tab2">
-			配方代號<input id="cldh_cldh" type="text" value="Not Yet Import Datas"/>
-			USD單價/KG<input id="cldh_cldj" type="text"/>
-			一手重量<input id="cldh_TotKgs" type="text"/>
-			<input id="Insert" type="button" value="Insert" />
-			<input id="Delete" type="button" value="Delete" />
-			<input type="button" value="Update" />
+			模具編號<input id="" type="text" placeholder="Not Yet Import Datas"/><br/>
+			模具類型<input id="" type="text"/>
+			客戶簡稱<input id="" type="text"/><br/>
+			鞋廠簡稱<input id="" type="text"/>
+			SIZE國別<input id="" type="text"/><br/>
+			<textarea placeholder="備註一"></textarea><br/>
+			<textarea placeholder="備註二"></textarea>
 			<br/>
 			<!-- 原物料列表 Table //Get cldh,zwpm,cldj,YYSL For 原物料-->
 			<table id="getcldhz" style="width:70%;margin:auto;display:none">

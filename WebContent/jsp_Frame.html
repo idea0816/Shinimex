@@ -15,7 +15,7 @@
 
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="js/forJsp.js"></script>
-
+<script type="text/javascript" src="js/jquery.blockUI.js"></script>
 
 <!-- alert box import -->
 <link rel="stylesheet" href="css/alertify.core.css" />
@@ -48,19 +48,30 @@
 			<!--  <ul id="button">-->
 			<ul style="background-color: #00C78C">
 				<li><a href="jsp_Frame.html">Home</a></li>
+				<!-- Basic Page -->
+				<li><a href="#">Basic<span class="caret"></span></a>
+					<div>
+						<ul>
+							<li><a id="moldControl" href="#">MoldControl</a></li>
+						</ul>
+					</div>
+				</li>				
 				<!-- Sales Page -->
 				<li><a href="#">Sales<span class="caret"></span></a>
 					<div>
 						<ul>
 							<li><a id="orderStatus" href="#">OrderStaus</a></li>
+							<li><a id="quotation" href="#">Quotation</a></li>
 							<li><a id="sales_Datalist" href="#">Sales Data</a></li>
 						</ul>
-					</div></li>
+					</div>
+				</li>
 				<!-- Roll-Mixing Page -->
 				<li><a href="#">Roll-Mixing<span class="caret"></span></a>
 					<div>
 						<ul>
 							<li><a id="editFormula" href="#">editFormula</a></li>
+							<li><a id="testReport" href="LabMaterialTestReport.html">Material Test Report</a></li>
 						</ul>
 					</div>
 				</li>
