@@ -166,5 +166,15 @@
 		<url-pattern>/ba_MoldControl.do</url-pattern>
 	</servlet-mapping>
 	
+	<!-- 2016-05-27 ba_MoldControl_getData -->
+	<servlet>
+		<servlet-name>ba_MoldControl_getData</servlet-name>
+		<servlet-class>shinimex.model.ba_MoldControl_getData</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ba_MoldControl_getData</servlet-name>
+		<url-pattern>/ba_MoldControl_getData.do</url-pattern>
+	</servlet-mapping>
+	
 	
 </web-app>

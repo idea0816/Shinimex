@@ -66,13 +66,13 @@
 			</table>
 		</article>
 		<article id="tab2">
-			模具編號<input id="" type="text" placeholder="Not Yet Import Datas"/><br/>
-			模具類型<input id="" type="text"/>
-			客戶簡稱<input id="" type="text"/><br/>
-			鞋廠簡稱<input id="" type="text"/>
-			SIZE國別<input id="" type="text"/><br/>
-			<textarea placeholder="備註一"></textarea><br/>
-			<textarea placeholder="備註二"></textarea>
+			模具編號<input id="MJZL_mjbh" type="text" placeholder="Not Yet Import Datas"/><br/>
+			模具類型<input id="lbzls_zwsm" type="text"/>
+			客戶簡稱<input id="kfzl_kfjc" type="text"/><br/>
+			鞋廠簡稱<input id="kfzl_kfjc1" type="text"/>
+			SIZE國別<input id="MJZL_gbbh" type="text"/><br/>
+			<textarea id="MJZL_bz1" placeholder="備註一"></textarea><br/>
+			<textarea id="MJZL_bz2" placeholder="備註二"></textarea>
 			<br/>
 			<!-- 原物料列表 Table //Get cldh,zwpm,cldj,YYSL For 原物料-->
 			<table id="getcldhz" style="width:70%;margin:auto;display:none">

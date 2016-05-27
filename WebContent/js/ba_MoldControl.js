@@ -13,16 +13,14 @@ $(document).ready(function() {
 	//Mold Data頁面取得radio選取值.並送資料到Mold List頁面
 	$("input[name='getMold']").click(function(){
 		 var mjbh = $("input:radio[name='getMold']:checked").val();
-		 alert(mjbh);
-		 /*
-		 $("#cldh_cldh").val(cldh);
+		 $("#MJZL_mjbh").val(mjbh);
 			$.ajax({
 				type : "post",
-				url : "EditFormula_getcldh.do?cldh="
-						+ encodeURI(encodeURI(cldh)),
+				url : "ba_MoldControl_getData.do?mjbh="
+						+ encodeURI(encodeURI(mjbh)),
 				dataType : "json",
 				success : function(cldhlistData) {
-					
+					/*
 					$("#Formula_getcldh td").parent().remove();//加上parent()避免出現空白格
 					var sum_amount = 0;//總金額
 					var sum_clyl = 0;//總重量
@@ -53,7 +51,7 @@ $(document).ready(function() {
 						$("#cldh_TotKgs").val(Math.round((sum_clyl-sum_z_clyl)*100)/100);//小數點後2位四捨五入簡易設定
 					}
 					
-					
+					*/
 				},
 				beforeSend : function() {
 					$.blockUI();
@@ -64,6 +62,6 @@ $(document).ready(function() {
 				error : function() {
 					alert("error");
 				}
-			});*/
+			});
 	});
 });
