@@ -1,14 +1,12 @@
 @charset "utf-8";
 /* jsp CSS Table Document */
-
-
 #content table {
 	width: 100%;
 	border: 0;
 	border-bottom-width: 5px;
 	border-bottom-style: solid;
 	border-bottom-color: #278092;
-	table-layout: fixed;/*列寬由表格寬度及列寬決定*/
+	table-layout: fixed; /*列寬由表格寬度及列寬決定*/
 }
 
 .table_title {
@@ -25,6 +23,10 @@ td {
 
 td.td_center {
 	text-align: center;
+}
+
+td.td_left {
+	text-align: left;
 }
 
 /*

@@ -66,6 +66,7 @@
 			</table>
 		</article>
 		<article id="tab2">
+			<div style="width:50%; float:left">
 			模具編號<input id="MJZL_mjbh" type="text" placeholder="Not Yet Import Datas"/><br/>
 			模具類型<input id="lbzls_zwsm" type="text"/>
 			客戶簡稱<input id="kfzl_kfjc" type="text"/><br/>
@@ -73,7 +74,24 @@
 			SIZE國別<input id="MJZL_gbbh" type="text"/><br/>
 			<textarea id="MJZL_bz1" placeholder="備註一"></textarea><br/>
 			<textarea id="MJZL_bz2" placeholder="備註二"></textarea>
-			<br/>
+			</div>
+			<div style="width:50%; float:right">
+				<!-- Size 明細列表 Table -->
+				<table id="MoldsizeList" style="overflow:scroll; height: 100px">
+					<tr class="table_title">
+						<th>選擇</th>
+						<th>SIZE</th>
+						<th>Amount</th>
+					</tr>
+					<tbody>
+						<tr>
+							<td><input type="radio" name="getSize" /></td>
+							<td>test</td>
+							<td>test</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 			<!-- 原物料列表 Table //Get cldh,zwpm,cldj,YYSL For 原物料-->
 			<table id="getcldhz" style="width:70%;margin:auto;display:none">
 				<tr class="table_title">

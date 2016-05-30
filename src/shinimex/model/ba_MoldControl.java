@@ -50,7 +50,7 @@ public class ba_MoldControl extends HttpServlet {
 				Integer mjsl = conn.rs.getInt("mjsl");//模具數量
 				summjsl = summjsl + conn.rs.getInt("mjsl");//模具數量總合
 				String gbbh = conn.rs.getString("gbbh");//鞋碼國別
-				moldData = new MoldData(mjbh, lbdh, kfjc, kfjc1, mjsl, gbbh);
+				moldData = new MoldData(mjbh, lbdh, kfjc, kfjc1, mjsl, gbbh, "", "");
 				moldList.add(moldData);
 			}
 

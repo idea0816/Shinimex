@@ -8,17 +8,19 @@ package shinimex.controller;
 
 public class MoldData {
 	private String mjbh;// 模具編號
-	private String lbdh;// 模具類型
+	private String lbdh;// 模具類型 = lbzls.zwsm = MJZLS.size
 	private String kfjc;// 客戶簡稱
 	private String kfjc1;// 鞋廠簡稱
 	private Integer mjsl;// 模具數量
 	private String gbbh;// 鞋碼國別
+	private String bz1;// 備註一
+	private String bz2;// 備註二
 
 	public MoldData() {
 	}
 
 	public MoldData(String mjbh, String lbdh, String kfjc, String kfjc1,
-			Integer mjsl, String gbbh) {
+			Integer mjsl, String gbbh, String bz1, String bz2) {
 		super();
 		this.mjbh = mjbh;
 		this.lbdh = lbdh;
@@ -26,6 +28,8 @@ public class MoldData {
 		this.kfjc1 = kfjc1;
 		this.mjsl = mjsl;
 		this.gbbh = gbbh;
+		this.bz1 = bz1;
+		this.bz2 = bz2;
 	}
 
 	public String getMjbh() {
@@ -74,6 +78,22 @@ public class MoldData {
 
 	public void setGbbh(String gbbh) {
 		this.gbbh = gbbh;
+	}
+
+	public String getBz1() {
+		return bz1;
+	}
+
+	public void setBz1(String bz1) {
+		this.bz1 = bz1;
+	}
+
+	public String getBz2() {
+		return bz2;
+	}
+
+	public void setBz2(String bz2) {
+		this.bz2 = bz2;
 	}
 
 }
