@@ -92,46 +92,62 @@
 					</tbody>
 				</table>
 			</div>
-			<!-- 原物料列表 Table //Get cldh,zwpm,cldj,YYSL For 原物料-->
-			<table id="getcldhz" style="width:70%;margin:auto;display:none">
-				<tr class="table_title">
-					<th style="width:10%">Add</th>
-					<th style="width:10%">LB</th>
-					<th style="width:10%">Amount</th>
-					<th>原物料名稱</th>
-					<th style="width:15%">Price</th>
-					<th style="width:15%">庫存</th>
-				</tr>
-				<tr>
-					<td>test</td>
-					<td>test</td>
-					<td>test</td>
-					<td>test</td>
-				</tr>
-			</table>
 			
-			
-			<!-- 配方明細列表 Table -->
-			<table id="Formula_getcldh">
+			<div class="clr"></div>
+			<!-- 模具進出/維修 Table -->
+			<div id="moldInOut" style="display:none">
+			<input id="Insert" type="button" value="Insert" />
+				<div id="insertInOut" style="display:none">
+					<input id="Cancel" type="button" value="Cancel" />
+						<div id="InsertMoldInOut" style="width:85%;margin:auto">
+							<table id="">
+								<tbody>
+									<tr id="">
+									<td>
+									<input id="DGLB" type="text" list="dglglist" placeholder="異動類別" />
+										<datalist id="dglglist">
+											<option>模具入庫</option>
+											<option>模具出庫</option>
+											<option>模具送修</option>
+											<option>模具返修</option>
+										</datalist>
+									</td>
+									<td><input id="date_inOut" type="date" /></td>
+									<td>
+										<input id="zszl" type="text" list="zszllist" placeholder="廠商名稱" />
+										<datalist id="zszllist"></datalist>
+									</td>
+									<td><input id="SL" type="number" min="0" placeholder="數量" /></td>
+									<td><input id="BZ" type="text" placeholder="備註" /></td>
+									<td><input id="saveInOut" type="button" value="SAVE" /></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			<table id="moldlist_InOut">
 				<tr class="table_title">
-					<th style="width:5%">類別</th>
-					<th>材料代號</th>
-					<th>中文品名</th>
-					<th>PHR</th>
-					<th>配方用量KG</th>
-					<th>USD單價</th>
-					<th>金額</th>
-					<th id="deleteCol" style="width:5%">Delete</th>
+					<th style="">異動類別</th>
+					<th>異動日期</th>
+					<th>廠商</th>
+					<th>入廠數量</th>
+					<th>出廠數量</th>
+					<th>備註</th>
+					<th>異動單號</th>
 				</tr>
 				<tbody>
-				<tr id="edidList">
-					<!-- <td><input id="deleteCB" type="checkbox" style="display:none"></td>-->
+				<tr id="">
+					<td>test</td>
+					<td>test</td>
+					<td>test</td>
+					<td>test</td>
 					<td>test</td>
 					<td>test</td>
 					<td>test</td>
 				</tr>
 				</tbody>
 			</table>
+			</div>
 		</article>
 		<article id="tab3">
 			<p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia,

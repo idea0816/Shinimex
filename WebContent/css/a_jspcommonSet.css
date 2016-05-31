@@ -80,7 +80,7 @@
 /*Menu Items Setting End*/
 
 /*input Setting Start*/
-input[type="text"], input[type="password"], input[type="date"] {
+input[type="text"], input[type="password"], input[type="date"], input[type="number"] {
 	font-size: 14px;
 	height: 20px;
 	width: 150px;
@@ -92,7 +92,7 @@ input[type="text"], input[type="password"], input[type="date"] {
 	border: 1px solid #00C78C;
 }
 
-input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus {
+input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="number"]:focus {
 	border-color: #036347;
 }
 

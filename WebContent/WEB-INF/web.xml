@@ -176,5 +176,25 @@
 		<url-pattern>/ba_MoldControl_getData.do</url-pattern>
 	</servlet-mapping>
 	
+	<!-- 2016-05-31 ba_MoldControl_sizeInOut -->
+	<servlet>
+		<servlet-name>ba_MoldControl_sizeInOut</servlet-name>
+		<servlet-class>shinimex.model.ba_MoldControl_sizeInOut</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ba_MoldControl_sizeInOut</servlet-name>
+		<url-pattern>/ba_MoldControl_sizeInOut.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 2016-05-31 ba_MoldControl_getzszl -->
+	<servlet>
+		<servlet-name>ba_MoldControl_getzszl</servlet-name>
+		<servlet-class>shinimex.model.ba_MoldControl_getzszl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ba_MoldControl_getzszl</servlet-name>
+		<url-pattern>/ba_MoldControl_getzszl.do</url-pattern>
+	</servlet-mapping>
+	
 	
 </web-app>
