@@ -10,18 +10,24 @@ public class MoldData_InOut {
 	private String DGLB; // 異動類別
 	private String KSDH; // 異動單號
 	private String KSRQ; // 異動日期
+	private String LYDH; // 廠商
+	private String SH;// 模具碼
+	private String MSBZ; // 備註
 	private Integer SL; // 入庫數量
 	private Integer SL1; // 入庫數量
 
 	public MoldData_InOut() {
 	}
 
-	public MoldData_InOut(String dGLB, String kSDH, String kSRQ, Integer sL,
-			Integer sL1) {
+	public MoldData_InOut(String dGLB, String kSDH, String kSRQ, String lYDH,
+			String sH, String mSBZ, Integer sL, Integer sL1) {
 		super();
 		DGLB = dGLB;
 		KSDH = kSDH;
 		KSRQ = kSRQ;
+		LYDH = lYDH;
+		SH = sH;
+		MSBZ = mSBZ;
 		SL = sL;
 		SL1 = sL1;
 	}
@@ -50,6 +56,30 @@ public class MoldData_InOut {
 		KSRQ = kSRQ;
 	}
 
+	public String getLYDH() {
+		return LYDH;
+	}
+
+	public void setLYDH(String lYDH) {
+		LYDH = lYDH;
+	}
+
+	public String getSH() {
+		return SH;
+	}
+
+	public void setSH(String sH) {
+		SH = sH;
+	}
+
+	public String getMSBZ() {
+		return MSBZ;
+	}
+
+	public void setMSBZ(String mSBZ) {
+		MSBZ = mSBZ;
+	}
+
 	public Integer getSL() {
 		return SL;
 	}
@@ -65,5 +95,6 @@ public class MoldData_InOut {
 	public void setSL1(Integer sL1) {
 		SL1 = sL1;
 	}
-
+	
+	
 }

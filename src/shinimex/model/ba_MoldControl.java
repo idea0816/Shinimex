@@ -2,6 +2,8 @@ package shinimex.model;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.TreeSet;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -39,6 +41,10 @@ public class ba_MoldControl extends HttpServlet {
 		// Mold(全部模具列表)
 		ArrayList<MoldData> moldList = new ArrayList<MoldData>();
 		MoldData moldData;
+		HashSet<String> getallkfjc = new HashSet<String>();//所有客戶、使用HashSet可排除重複資料
+		TreeSet<String> allkfjc = new TreeSet<String>(getallkfjc);  
+	    allkfjc.comparator();//HashSet 排序
+	  
 		int summjsl = 0;		
 		conn.Conn_SQL();
 		try {
@@ -46,6 +52,7 @@ public class ba_MoldControl extends HttpServlet {
 				String mjbh = conn.rs.getString("mjbh");//模具編號
 				String lbdh = conn.rs.getString("lbdh");//模具類型
 				String kfjc = conn.rs.getString("kfjc");//客戶簡稱
+				allkfjc.add(conn.rs.getString("kfjc"));
 				String kfjc1 = conn.rs.getString("kfjc1");//鞋廠簡稱
 				Integer mjsl = conn.rs.getInt("mjsl");//模具數量
 				summjsl = summjsl + conn.rs.getInt("mjsl");//模具數量總合
@@ -64,6 +71,7 @@ public class ba_MoldControl extends HttpServlet {
 		//Send Data
 		session.setAttribute("moldList", moldList);
 		session.setAttribute("summjsl", summjsl);
+		session.setAttribute("allkfjc", allkfjc);
 		resp.sendRedirect("ba_MoldControl.jsp");
 		//super.doGet(req, resp);
 	}

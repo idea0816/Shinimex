@@ -35,11 +35,26 @@
 
 	<section class="block">
 		<article id="tab1">
-			模具總數量<input id="sum_mjsl" type="text" placeholder="summjsl" value="${summjsl}"/>		
-			<input id="KHDH" type="text" list="KHDHlist" placeholder="客戶名稱" >
-				<datalist id="KHDHlist"></datalist>
+			模具總數量<input id="sum_mjsl" type="text" placeholder="summjsl" value="${summjsl}"/>	
+			<input id="mjbh_choice" type="text" list="mjbhlist" placeholder="模具名稱" >
+				<datalist id="mjbhlist">
+					<c:forEach items="${sessionScope.moldList}" var="moldList" varStatus="status">
+					<option>
+					${moldList.mjbh}
+					</option>
+					</c:forEach>	
+				</datalist>
 				
+			<input id="KHDH" type="text" list="KHDHlist" placeholder="客戶名稱" >
+				<datalist id="KHDHlist">
+					<c:forEach items="${sessionScope.allkfjc}" var="allkfjc" varStatus="status">
+					<option>
+					${allkfjc}
+					</option>
+					</c:forEach>
+				</datalist>
 			<input id="getDatas" type="button" value="Get Datas" >
+			
 			<table >
 				<tr class="table_title">
 					<th style="width:5%">選擇</th>
@@ -99,12 +114,12 @@
 			<input id="Insert" type="button" value="Insert" />
 				<div id="insertInOut" style="display:none">
 					<input id="Cancel" type="button" value="Cancel" />
-						<div id="InsertMoldInOut" style="width:85%;margin:auto">
+						<div id="InsertMoldInOut" style="width:90%;margin:auto">
 							<table id="">
 								<tbody>
 									<tr id="">
 									<td>
-									<input id="DGLB" type="text" list="dglglist" placeholder="異動類別" />
+									<input id="DGLB" type="text" list="dglglist" placeholder="異動類別" style="width:90%" />
 										<datalist id="dglglist">
 											<option>模具入庫</option>
 											<option>模具出庫</option>
@@ -112,13 +127,33 @@
 											<option>模具返修</option>
 										</datalist>
 									</td>
-									<td><input id="date_inOut" type="date" /></td>
+									<td><input id="date_inOut" type="date" style="width:90%" /></td>
 									<td>
-										<input id="zszl" type="text" list="zszllist" placeholder="廠商名稱" />
+										<input id="zszl" type="text" list="zszllist" placeholder="廠商名稱" style="width:95%" />
 										<datalist id="zszllist"></datalist>
 									</td>
-									<td><input id="SL" type="number" min="0" placeholder="數量" /></td>
-									<td><input id="BZ" type="text" placeholder="備註" /></td>
+									<td><input id="SL" type="number" min="1" placeholder="數量" value="1" style="width:90%" /></td>
+									<td>
+									<input id="moldCode" type="text" list="moldCodelist" placeholder="模具碼" style="width:90%" />
+										<datalist id="moldCodelist">
+											<option selected="selected">A</option>
+											<option>B</option>
+											<option>C</option>
+											<option>D</option>
+											<option>E</option>
+											<option>F</option>
+											<option>G</option>
+											<option>H</option>
+											<option>I</option>
+											<option>J</option>
+											<option>K</option>
+											<option>L</option>
+											<option>M</option>
+											<option>N</option>
+											<option>O</option>
+										</datalist>
+									</td>
+									<td><input id="BZ" type="text" placeholder="備註" style="width:115%" /></td>
 									<td><input id="saveInOut" type="button" value="SAVE" /></td>
 								</tr>
 							</tbody>
@@ -130,6 +165,7 @@
 					<th style="">異動類別</th>
 					<th>異動日期</th>
 					<th>廠商</th>
+					<th>模具碼</th>
 					<th>入廠數量</th>
 					<th>出廠數量</th>
 					<th>備註</th>
@@ -137,6 +173,7 @@
 				</tr>
 				<tbody>
 				<tr id="">
+					<td>test</td>
 					<td>test</td>
 					<td>test</td>
 					<td>test</td>
