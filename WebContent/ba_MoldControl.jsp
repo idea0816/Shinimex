@@ -44,8 +44,8 @@
 					</option>
 					</c:forEach>	
 				</datalist>
-				
-			<input id="KHDH" type="text" list="KHDHlist" placeholder="客戶名稱" >
+			Or	
+			<input id="KHDH_choice" type="text" list="KHDHlist" placeholder="客戶名稱" >
 				<datalist id="KHDHlist">
 					<c:forEach items="${sessionScope.allkfjc}" var="allkfjc" varStatus="status">
 					<option>
@@ -55,7 +55,7 @@
 				</datalist>
 			<input id="getDatas" type="button" value="Get Datas" >
 			
-			<table >
+			<table id="moldList">
 				<tr class="table_title">
 					<th style="width:5%">選擇</th>
 					<th>模具編號</th>

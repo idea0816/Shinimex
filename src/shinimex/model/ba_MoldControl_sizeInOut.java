@@ -236,14 +236,17 @@ public class ba_MoldControl_sizeInOut extends HttpServlet {
 				
 				//更新模具數量
 				conn.rs_title = "UPDATE MJZLS SET mjsl = '"+old_mjsl+"' WHERE mjbh = '"+mjbh+"' AND size = '"+size+"'";
+				System.out.println(conn.rs_title);
 				conn.Conn_Update();
 				
 				//Insert Data to KSYD
 				conn.rs_title = "INSERT INTO KSYD (DGLB,CQDH,KSDH,KSRQ,LYLB,LYDH,BZ,USERID,USERDATE,ZSDH) VALUES('"+newDGLB+"','S02','"+KSDH+"','"+newdate_inOut+"','J','"+newzszl+"','','SUPER','"+now+"','"+size+"')";
+				System.out.println(conn.rs_title);
 				conn.Conn_Update();
 				
 				//Insert Data to KSYDS
 				conn.rs_title = "INSERT INTO KSYDS (DGLB,KSDH,CQDH,SH,CLDH,MSBZ,SL,DJ,GR,SL1,GR1,NY,USERID,USERDATE) VALUES('"+newDGLB+"','"+KSDH+"','S02','"+newmoldCode+"','"+mjbh+"','"+newBZ+"',"+SL+",NULL,NULL,"+SL1+",NULL,'"+nowMonth.substring(2)+"','SUPER','"+now+"')";
+				System.out.println(conn.rs_title);
 				conn.Conn_Update();
 				
 				//Renew Page

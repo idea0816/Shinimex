@@ -11,6 +11,55 @@ $(document).ready(
 				}
 			});
 			
+			//Get Datas
+			$("#getDatas").click(function(){
+					var mjbh_choice = $("#mjbh_choice").val();
+					var KHDH_choice = $("#KHDH_choice").val();
+					
+					//Get mjbh_choice or KHDH_choice DataList
+					$.ajax({
+						type : "get",
+						url : "ba_MoldControl.do?mjbh_choice="
+								+ mjbh_choice+"&KHDH_choice="+KHDH_choice,
+						dataType : "json",
+						success : function(SendData) {
+							
+							//Get Mold List
+							$("#moldList td").parent().remove();/*加上parent()避免出現空白格*/
+							$.each(SendData[0], function(key, value) {
+								$("#moldList").append("<tr onMouseOut='this.style.backgroundColor=\"\"' onMouseOver='this.style.backgroundColor=\"#B2C67F\"';>" +
+										"<td class='td_center'><input type='radio' name='getMold' value='"+value.mjbh+"' /></td>" +
+										"<td class='td_center'>"+value.mjbh+"</td>" +
+										"<td>"+value.lbdh+"</td>" +
+										"<td>"+value.kfjc+"</td>" +
+										"<td>"+value.kfjc1+"</td>" +
+										"<td>"+value.mjsl+"</td>" +
+										"<td>"+value.gbbh+"</td>" +
+												"</tr>");
+							});
+							
+							
+							//Get summjsl
+							$("#sum_mjsl").val(SendData[1]);
+							
+							$("#mjbh_choice").val("");
+							$("#KHDH_choice").val("");
+						
+							
+						},
+						beforeSend : function() {
+							$.blockUI();
+						},
+						complete : function() {
+							$.unblockUI();
+						},
+						error : function() {
+							alert("error");
+						}
+					});
+			});
+			
+			
 			
 			// Mold Data頁面取得radio選取值.並送資料到Mold List頁面
 			$("input[name='getMold']").click(
@@ -35,7 +84,7 @@ $(document).ready(
 									$("#MJZL_bz1").val(value.bz1);
 									$("#MJZL_bz2").val(value.bz2);
 
-								})
+								});
 								//Get Mold Size
 								$("#MoldsizeList td").parent().remove();/*加上parent()避免出現空白格*/
 								$.each(SendData[1], function(key, value) {
@@ -44,7 +93,7 @@ $(document).ready(
 											"<td class='td_left'>"+value.lbdh+"</td>" +
 											"<td>"+value.mjsl+"</td>" +
 													"</tr>");
-								})
+								});
 																
 							},
 							beforeSend : function() {
@@ -58,6 +107,54 @@ $(document).ready(
 							}
 						});
 					});
+			
+			//Mold Data頁面取得radio選取值.並送資料到Mold List頁面(append頁面需要用ON、程式碼是拷貝上面的)
+			$("body").on("click", "#moldList", function(){//Dynamically add need to "ON"
+				
+					var mjbh = $("input:radio[name='getMold']:checked")
+							.val();
+					$("#MJZL_mjbh").val(mjbh);
+					
+					//Get Mold Detail & Mold Size
+					$.ajax({
+						type : "post",
+						url : "ba_MoldControl_getData.do?mjbh="
+								+ encodeURI(encodeURI(mjbh)),
+						dataType : "json",
+						success : function(SendData) {
+							//Get Mold Detail 
+							$.each(SendData[0], function(key, value) {
+								$("#lbzls_zwsm").val(value.lbdh);
+								$("#kfzl_kfjc").val(value.kfjc);
+								$("#kfzl_kfjc1").val(value.kfjc1);
+								$("#MJZL_gbbh").val(value.gbbh);
+								$("#MJZL_bz1").val(value.bz1);
+								$("#MJZL_bz2").val(value.bz2);
+
+							});
+							//Get Mold Size
+							$("#MoldsizeList td").parent().remove();/*加上parent()避免出現空白格*/
+							$.each(SendData[1], function(key, value) {
+								$("#MoldsizeList").append("<tr onMouseOut='this.style.backgroundColor=\"\"' onMouseOver='this.style.backgroundColor=\"#B2C67F\"';>" +
+										"<td class='td_center'><input id='getSize' name='getSize' value='"+value.lbdh+"' type='radio'></td>" +
+										"<td class='td_left'>"+value.lbdh+"</td>" +
+										"<td>"+value.mjsl+"</td>" +
+												"</tr>");
+							});
+															
+						},
+						beforeSend : function() {
+							$.blockUI();
+						},
+						complete : function() {
+							$.unblockUI();
+						},
+						error : function() {
+							alert("error");
+						}
+					});
+			});
+			
 			
 			//MoldsizeList Radio Select
 			$("body").on("click", "#MoldsizeList", function(){//Dynamically add need to "ON"
