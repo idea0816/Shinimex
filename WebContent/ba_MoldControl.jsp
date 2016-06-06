@@ -28,7 +28,7 @@
 	<ul class="tabs">
 		<li><a href="#tab1">Mold Data</a></li>
 		<li><a href="#tab2">Mold List</a></li>
-		<li><a href="#tab3">Other</a></li>
+		<li><a href="#tab3">Last 3Months Records</a></li>
 	</ul>
 
 	<div class="clr"></div>
@@ -187,13 +187,32 @@
 			</div>
 		</article>
 		<article id="tab3">
-			<p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia,
-				magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae
-				facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis,
-				adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse
-				ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante,
-				mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede,
-				ornare a, lacinia eu, vulputate vel, nisl.</p>
+			<table id="3months_InOut">
+				<tr class="table_title">
+					<th style="">異動類別</th>
+					<th>異動日期</th>
+					<th>廠商</th>
+					<th>模具編號</th>
+					<th>SIZE</th>
+					<th>模具碼</th>
+					<th>入廠數量</th>
+					<th>出廠數量</th>
+					<th>備註</th>
+					<th>異動單號</th>
+				</tr>
+				<tbody>
+				<tr id="">
+					<td>test</td>
+					<td>test</td>
+					<td>test</td>
+					<td>test</td>
+					<td>test</td>
+					<td>test</td>
+					<td>test</td>
+					<td>test</td>
+				</tr>
+				</tbody>
+			</table>
 		</article>
 	</section>
 

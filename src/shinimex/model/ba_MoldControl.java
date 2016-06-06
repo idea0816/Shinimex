@@ -97,6 +97,17 @@ public class ba_MoldControl extends HttpServlet {
 				out.close();
 			}
 			
+			//Get Last 3 Months InOut Data
+			conn.rs_title = "SELECT KSYD.DGLB,KSYD.KSRQ,KSYD.LYDH,KSYDS.CLDH,KSYD.ZSDH,KSYDS.SH,KSYDS.SL,KSYDS.SL1,KSYDS.MSBZ,KSYD.KSDH FROM KSYD KSYD, KSYDS KSYDS WHERE LYLB = 'J' AND KSYD.KSDH = KSYDS.KSDH AND KSYD.KSRQ >= DateAdd(m,-3,GetDate())";
+			//conn.Conn_SQL();
+			try {
+				while (conn.rs.next()) {
+					
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			
 		//模具選擇後列表	
 		}else if(KHDH_choice == ""){

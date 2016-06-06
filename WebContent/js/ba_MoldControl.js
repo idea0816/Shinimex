@@ -94,6 +94,8 @@ $(document).ready(
 											"<td>"+value.mjsl+"</td>" +
 													"</tr>");
 								});
+								
+								$("#moldInOut").hide();
 																
 							},
 							beforeSend : function() {
@@ -141,6 +143,8 @@ $(document).ready(
 										"<td>"+value.mjsl+"</td>" +
 												"</tr>");
 							});
+							
+							$("#moldInOut").hide();
 															
 						},
 						beforeSend : function() {

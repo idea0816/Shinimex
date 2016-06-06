@@ -1,34 +1,56 @@
+//forJsp-jsp_Frame Menu Load  Ver.1505
+//2016-06-06 新增點選之後先鎖定畫面
+
 $(document).ready(function() {
 
 	//Basic
+//	$("#moldControl").click(function() {
+//		$("#content").load("ba_MoldControl.do");
+//	});
+	
 	$("#moldControl").click(function() {
-		$("#content").load("ba_MoldControl.do");
-	});
-
-	//Sales
-	$("#orderStatus").click(function() {
-		$("#content").load("orderStatus.do");
-	});
-	/*
-	$("#orderStatus").click(function() {
 		$.ajax({
-			//type : "get",
-			//url:"",
-			
+			type : "GET",
+			url:"ba_MoldControl.jsp",
+			dataType : "html",
+			success : function() {
+				$("#content").load("ba_MoldControl.do");
+			},
 			beforeSend : function() {
 				$.blockUI();
 			},
 			complete : function() {
 				$.unblockUI();
 			},
-			success :$("#content").load("orderStatus.do"),
 			error : function() {
 				alert("error");
 			}
 		});
 		
 	});
-	 */
+	
+
+	//Sales
+	$("#orderStatus").click(function() {
+		$.ajax({
+			type : "GET",
+			url:"orderStatus.jsp",
+			dataType : "html",
+			success : function() {
+				$("#content").load("orderStatus.do");
+			},
+			beforeSend : function() {
+				$.blockUI();
+			},
+			complete : function() {
+				$.unblockUI();
+			},
+			error : function() {
+				alert("error");
+			}
+		});
+		
+	});
 	$("#quotation").click(function() {
 		$("#content").load("quotation.html");
 	});
@@ -38,17 +60,14 @@ $(document).ready(function() {
 	});
 
 	//Roll-Mixing Machine
-	/*
-	$("#editFormula").click(function() {
-		$("#content").load("editFormula.do");
-	});
-	 */
 	$("#editFormula").click(function() {
 		$.ajax({
-			type : "get",
-			url : "",
-			success : $("#content").load("editFormula.do"),
-
+			type : "GET",
+			url:"editFormula.jsp",
+			dataType : "html",
+			success : function() {
+				$("#content").load("editFormula.do");
+			},
 			beforeSend : function() {
 				$.blockUI();
 			},
