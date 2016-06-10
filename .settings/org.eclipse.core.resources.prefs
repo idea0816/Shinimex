@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
 encoding//WebContent/StaffLogin.jsp=UTF-8
+encoding//WebContent/i18n/Messages.properties=UTF-8
+encoding//WebContent/i18n/Messages_zh.properties=UTF-8
 encoding//WebContent/pc_Progress.jsp=UTF-8
 encoding//WebContent/test.jsp=UTF-8
