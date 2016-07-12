@@ -113,26 +113,6 @@
 		<servlet-name>deleteData</servlet-name>
 		<url-pattern>/deleteData.do</url-pattern>
 	</servlet-mapping>
-
-	<!-- 2015-09-07 editFormula -->
-	<servlet>
-		<servlet-name>editFormula</servlet-name>
-		<servlet-class>shinimex.model.EditFormula</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>editFormula</servlet-name>
-		<url-pattern>/editFormula.do</url-pattern>
-	</servlet-mapping>
-	
-	<!-- 2015-09-22 EditFormula_getcldh -->
-	<servlet>
-		<servlet-name>getcldh</servlet-name>
-		<servlet-class>shinimex.model.EditFormula_getcldh</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>getcldh</servlet-name>
-		<url-pattern>/EditFormula_getcldh.do</url-pattern>
-	</servlet-mapping>
 	
 	<!-- 2015-10-12 pc_produceList -->
 	<servlet>
@@ -155,7 +135,7 @@
 	</servlet-mapping>
 	
 	
-	<!-- Basic Page -->
+	<!-- Basic Page Start-->
 	<!-- 2016-05-26 ba_MoldControl -->
 	<servlet>
 		<servlet-name>ba_MoldControl</servlet-name>
@@ -195,6 +175,39 @@
 		<servlet-name>ba_MoldControl_getzszl</servlet-name>
 		<url-pattern>/ba_MoldControl_getzszl.do</url-pattern>
 	</servlet-mapping>
+	<!-- Basic Page End-->
+	
+	<!-- Roll-Mixing Machine Start -->
+	<!-- 2015-09-07 editFormula -->
+	<servlet>
+		<servlet-name>editFormula</servlet-name>
+		<servlet-class>shinimex.model.EditFormula</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>editFormula</servlet-name>
+		<url-pattern>/editFormula.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 2015-09-22 EditFormula_getcldh -->
+	<servlet>
+		<servlet-name>getcldh</servlet-name>
+		<servlet-class>shinimex.model.EditFormula_getcldh</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>getcldh</servlet-name>
+		<url-pattern>/EditFormula_getcldh.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 2016-07-12 原料、配方用量分析 -->
+	<servlet>
+		<servlet-name>rmMonthAnalysis</servlet-name>
+		<servlet-class>shinimex.model.rm_MonthAnalysis</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>rmMonthAnalysis</servlet-name>
+		<url-pattern>/rmMonthAnalysis.do</url-pattern>
+	</servlet-mapping>
+	<!-- Roll-Mixing Machine End -->
 	
 	
 </web-app>

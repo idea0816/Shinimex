@@ -3,11 +3,8 @@
 
 $(document).ready(function() {
 
-	//Basic
-//	$("#moldControl").click(function() {
-//		$("#content").load("ba_MoldControl.do");
-//	});
-	
+	/**Basic Start**/
+	//moldControl
 	$("#moldControl").click(function() {
 		$.ajax({
 			type : "GET",
@@ -29,8 +26,10 @@ $(document).ready(function() {
 		
 	});
 	
+	/**Basic End**/
 
-	//Sales
+	/**Sales Start**/
+	//orderStatus
 	$("#orderStatus").click(function() {
 		$.ajax({
 			type : "GET",
@@ -51,15 +50,21 @@ $(document).ready(function() {
 		});
 		
 	});
+	
+	//quotation
 	$("#quotation").click(function() {
 		$("#content").load("quotation.html");
 	});
-
+	
+	//sales_Datalist
 	$("#sales_Datalist").click(function() {
 		$("#content").load("sales_Datalist.jsp");
 	});
+	
+	/**Sales End**/
 
-	//Roll-Mixing Machine
+	/**Roll-Mixing Machine Start**/
+	//editFormula
 	$("#editFormula").click(function() {
 		$.ajax({
 			type : "GET",
@@ -80,6 +85,32 @@ $(document).ready(function() {
 		});
 
 	});
+	
+	//Month Analysis
+	$("#rmMonthAnalysis").click(function() {
+		//$("#content").load("rm_MonthAnalysis.jsp");
+		$.ajax({
+			type : "GET",
+			url:"rm_MonthAnalysis.jsp",
+			dataType : "html",
+			success : function() {
+				$("#content").load("rmMonthAnalysis.do");
+			},
+			beforeSend : function() {
+				$.blockUI();
+			},
+			complete : function() {
+				$.unblockUI();
+			},
+			error : function() {
+				alert("error");
+			}
+		});
+	});
+	
+	//Month Analysis
+	
+	/**Roll-Mixing Machine End**/
 
 	//Product Control
 	$("#pc_Progress").click(function() {
