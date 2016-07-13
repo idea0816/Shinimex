@@ -20,6 +20,7 @@ import javax.servlet.http.HttpSession;
  *
  */
 
+@SuppressWarnings("serial")
 public class rm_MonthAnalysis extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)

@@ -9,9 +9,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <link rel="stylesheet" type="text/css" href="css/table.css" />
-<!--  
-<script type="text/javascript" src="js/orderStatus.js"></script>
--->
+
 </head>
 <body>
 
@@ -77,7 +75,7 @@
 	</table>
 	<br>
 	<table border="1">
-		<caption><label class="label_title">Shinimex 配方用量分析 - <%= session.getAttribute("year") %></label></caption>
+		<caption><label class="label_title">Shinimex 配方用量分析  Top5 - <%= session.getAttribute("year") %></label></caption>
 		<tr class="table_title">
 			<th style="width:150px">配方名稱</th>
 			<th>總用量(Kg)</th>
@@ -124,8 +122,7 @@
 	</table>
 	<label class="label_usual">
 	<br /> 說明：
-	<br /> 一、飾片指非大底的總合(ex.半叉、飾帶...等)。
-	<br /> 二、預計交貨單量及實際產能均含飾片數量。
+	<br /> 一、因更改計算方法、故資料由2016年2月啟用為主。
 	<br /> 資料擷取日期：
 	<%
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -134,6 +131,7 @@
 	</label>
 	<br />
 	<br />
+	<div style="display:none">
 	<input id="choiceyear" list="yearlist" type="text" placeholder="Back to the...?" />
 	<datalist id="yearlist">
 		<c:forEach items="${sessionScope.forchoiceyears}" var="forchoiceyears" varStatus="status">
@@ -144,6 +142,6 @@
 	<input type="button" value="PRINT" />
 	<input type="button" value="Export to Excel" />
 	<input type="button" value="Export to PDF" />
-
+	</div>
 </body>
 </html>

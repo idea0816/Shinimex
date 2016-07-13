@@ -7,6 +7,7 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -121,9 +122,14 @@ public class OrderStatus extends HttpServlet {
 			// Complete orderStatus
 			ArrayList<String> outsoles = new ArrayList<String>();// 大底
 			ArrayList<String> pieces = new ArrayList<String>();// 飾片
+			ArrayList<Double> temp_outsoles = new ArrayList<Double>();//大底數字暫存
+			ArrayList<Double> temp_pieces = new ArrayList<Double>();//飾片數字暫存
+			ArrayList<String> subtotal = new ArrayList<String>();//小計
 			ArrayList<String> delivery = new ArrayList<String>();// 交貨
 			ArrayList<String> capacity = new ArrayList<String>();// 產能
 			ArrayList<String> forchoiceyears = new ArrayList<String>();//取得年份資料
+			Map<String, String> brands = new LinkedHashMap<String, String>();//品牌分析資料
+			Map<String, String> XieXing = new LinkedHashMap<String, String>();//鞋型分析資料
 
 			// 大底接單量
 			conn.rs_title = "SELECT SUM(DDZL.Pairs) outsoles FROM DDZL DDZL,XXZL XXZL WHERE DATEPART(YEAR, DDZL.DDRQ) = '"
@@ -137,6 +143,7 @@ public class OrderStatus extends HttpServlet {
 					sumoutsoles += conn.rs.getDouble("outsoles");
 					outsoles.add(String.valueOf(df.format(conn.rs
 							.getDouble("outsoles"))));
+					temp_outsoles.add(conn.rs.getDouble("outsoles"));
 					i_outsoles += 1;
 				}
 			} catch (Exception e) {
@@ -161,6 +168,7 @@ public class OrderStatus extends HttpServlet {
 					sumpieces += conn.rs.getDouble("pieces");
 					pieces.add(String.valueOf(df.format(conn.rs
 							.getDouble("pieces"))));
+					temp_pieces.add(conn.rs.getDouble("pieces"));
 					i_pieces += 1;
 				}
 			} catch (Exception e) {
@@ -172,6 +180,16 @@ public class OrderStatus extends HttpServlet {
 				i_pieces += 1;
 			}
 			pieces.add(String.valueOf(df.format(sumpieces)));
+			
+			//小計
+			for(int i = 0; i < temp_outsoles.size(); i++){
+				subtotal.add(String.valueOf(df.format(temp_outsoles.get(i) + temp_pieces.get(i))));
+			}
+			// 補足12個月
+			while (subtotal.size() != 12) {
+				subtotal.add("");
+			}
+			subtotal.add(df.format(sumoutsoles + sumpieces));
 
 			// 預計交貨單量
 			conn.rs_title = "SELECT SUM(Pairs) delivery FROM DDZL WHERE DATEPART(YEAR, DDJQ) = '"
@@ -225,13 +243,44 @@ public class OrderStatus extends HttpServlet {
 			for(int i = 2010; i <= nowyear; i++){
 				forchoiceyears.add(Integer.toString(i));
 			}
+			
+			//取得品牌分析明細
+			conn.rs_title = "SELECT kfzl.kfjc,SUM(DDZL.Pairs) outsoles FROM DDZL DDZL,XXZL XXZL,MJZL MJZL,kfzl kfzl WHERE DDZL.DDRQ like '"+year+"%' AND DDZL.DDLB = 'N' AND DDZL.DDZT = 'Y' AND DDZL.XieXing = XXZL.XieXing AND DDZL.SheHao = XXZL.SheHao AND XXZL.mjbh = MJZL.mjbh AND MJZL.kfdh = kfzl.kfdh GROUP BY kfzl.kfjc ORDER BY outsoles DESC";
+			conn.Conn_SQL();
+			try {
+				while (conn.rs.next()) {
+					brands.put(conn.rs.getString("kfjc"), df.format(conn.rs.getDouble("outsoles")));
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			//取得鞋型分析明細
+			conn.rs_title = "SELECT XieXing,SUM(DDZL.Pairs) outsoles FROM DDZL WHERE DDRQ like '"+year+"%' AND DDLB = 'N' AND DDZT = 'Y' GROUP BY XieXing ORDER BY outsoles DESC";
+			conn.Conn_SQL();
+			double tempsumxiexingoutsoles = 0.0;
+			try {
+				while (conn.rs.next()) {
+					if(conn.rs.getDouble("outsoles") < 100000){
+						tempsumxiexingoutsoles = tempsumxiexingoutsoles + conn.rs.getDouble("outsoles");
+					}else{
+						XieXing.put(conn.rs.getString("XieXing"), df.format(conn.rs.getDouble("outsoles")));
+					}
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			XieXing.put("Other", df.format(tempsumxiexingoutsoles));
 
 			session.setAttribute("year", year);
 			session.setAttribute("outsoles", outsoles);
 			session.setAttribute("pieces", pieces);
+			session.setAttribute("subtotal", subtotal);
 			session.setAttribute("delivery", delivery);
 			session.setAttribute("capacity", capacity);
 			session.setAttribute("forchoiceyears", forchoiceyears);
+			session.setAttribute("brands", brands);
+			session.setAttribute("XieXing", XieXing);
 			resp.sendRedirect("orderStatus.jsp");
 			// RequestDispatcher rd =
 			// req.getRequestDispatcher("orderStatus.jsp");

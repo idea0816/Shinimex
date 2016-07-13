@@ -25,9 +25,12 @@
 	session.setAttribute("year", year);
 	session.setAttribute("outsoles", outsoles);
 	session.setAttribute("pieces", pieces);
+	session.setAttribute("subtotal", subtotal);
 	session.setAttribute("delivery", delivery);
 	session.setAttribute("capacity", capacity);
 	session.setAttribute("forchoiceyears", forchoiceyears);
+	session.setAttribute("brands", brands);
+	session.setAttribute("XieXing", XieXing);
 	-->
 
 	<table border="1">
@@ -49,7 +52,7 @@
 			<th>Sum</th>
 		</tr>
 		<tr>
-			<th rowspan="2">月份<br/>接單量</th>
+			<th rowspan="3">月份<br/>接單量</th>
 			<th>大底</th>
 			<c:forEach items="${sessionScope.outsoles}" var="outsoles"
 				varStatus="status">
@@ -61,6 +64,13 @@
 			<c:forEach items="${sessionScope.pieces}" var="pieces"
 				varStatus="status">
 				<td>${pieces}</td>
+			</c:forEach>
+		</tr>
+		<tr>
+			<th>小計</th>
+			<c:forEach items="${sessionScope.subtotal}" var="subtotal"
+				varStatus="status">
+				<td>${subtotal}</td>
 			</c:forEach>
 		</tr>
 		<tr>
@@ -104,6 +114,38 @@
 	<input type="button" value="PRINT" />
 	<input type="button" value="Export to Excel" />
 	<input type="button" value="Export to PDF" />
+	<br />
+	<br />
+	<div>
+				<table border="1" style="width:40%;margin:auto;float:left">
+					<caption><label class="label_title">品牌分析明細 - <%= session.getAttribute("year") %></label></caption>
+					<tr class="table_title">
+						<th>品牌名稱</th>
+						<th>訂單數量</th>
+					</tr>
+					<c:forEach items="${sessionScope.brands}" var="brands" varStatus="status">
+					<tr>
+						<td>${brands.key}</td>
+						<td>${brands.value}</td>
+					</tr>
+					</c:forEach>
+				</table>
+				<table border="1" style="width:40%;margin:auto">
+					<caption><label class="label_title">鞋型分析明細 - <%= session.getAttribute("year") %></label></caption>
+					<tr class="table_title">
+						<th>鞋型名稱</th>
+						<th>訂單數量</th>
+					</tr>
+					<c:forEach items="${sessionScope.XieXing}" var="XieXing" varStatus="status">
+					<tr>
+						<td>${XieXing.key}</td>
+						<td>${XieXing.value}</td>
+					</tr>
+					</c:forEach>
+				</table>
+	
+	
+	</div>
 
 </body>
 </html>
