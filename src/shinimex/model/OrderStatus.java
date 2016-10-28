@@ -181,6 +181,21 @@ public class OrderStatus extends HttpServlet {
 			}
 			pieces.add(String.valueOf(df.format(sumpieces)));
 			
+			//避免大底和傭片月份不足造成IndexOutOfBoundsException
+			if(temp_outsoles.size() != temp_pieces.size()){
+				int even = temp_outsoles.size() - temp_pieces.size();
+				if(even < 0){//飾片月份比大底月份多
+					even = Math.abs(even);
+					for(int i = 0; i < even; i++){
+						temp_outsoles.add(0.0);
+					}
+				}else{//大底月份比飾片月份多
+					for(int i = 0; i < even; i++){
+						temp_pieces.add(0.0);
+					}
+				}
+			}else{}
+			
 			//小計
 			for(int i = 0; i < temp_outsoles.size(); i++){
 				subtotal.add(String.valueOf(df.format(temp_outsoles.get(i) + temp_pieces.get(i))));
